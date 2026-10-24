@@ -1569,4 +1569,18 @@ class AppLocalizationsIt extends AppLocalizations {
   @override
   String get dab_music_source_description =>
       'Per audiophile. Fornisce flussi audio di alta qualità/senza perdita. Abbinamento traccia accurato basato su ISRC.';
+
+  @override
+  String get lastfm_api_key => 'Chiave API';
+
+  @override
+  String get lastfm_api_secret => 'Segreto condiviso (shared secret)';
+
+  @override
+  String get lastfm_api_key_optional_info =>
+      'Facoltativo: usa una tua chiave API di Last.fm invece di quella inclusa. Puoi crearla qui:';
+
+  @override
+  String get lastfm_api_key_required_info =>
+      'Questa build non include una chiave API di Last.fm: creane una tua (gratuita) e inseriscila qui sotto:';
 }

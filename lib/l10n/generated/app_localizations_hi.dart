@@ -1567,4 +1567,18 @@ class AppLocalizationsHi extends AppLocalizations {
   @override
   String get dab_music_source_description =>
       'ऑडियोफाइलों के लिए। उच्च-गुणवत्ता/बिना हानि वाले ऑडियो स्ट्रीम प्रदान करता है। सटीक ISRC आधारित ट्रैक मिलान।';
+
+  @override
+  String get lastfm_api_key => 'API key';
+
+  @override
+  String get lastfm_api_secret => 'Shared secret';
+
+  @override
+  String get lastfm_api_key_optional_info =>
+      'Optional: use your own Last.fm API key instead of the built-in one. You can create one here:';
+
+  @override
+  String get lastfm_api_key_required_info =>
+      'This build has no Last.fm API key: create your own (free) and enter it below:';
 }

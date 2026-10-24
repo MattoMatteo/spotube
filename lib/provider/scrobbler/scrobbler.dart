@@ -7,9 +7,25 @@ import 'package:spotube/collections/env.dart';
 import 'package:spotube/models/database/database.dart';
 import 'package:spotube/models/metadata/metadata.dart';
 import 'package:spotube/provider/database/database.dart';
+import 'package:spotube/services/kv_store/kv_store.dart';
 import 'package:spotube/services/logger/logger.dart';
 
 class ScrobblerNotifier extends AsyncNotifier<Scrobblenaut?> {
+  /// Whether this build ships a Last.fm API key (.env), otherwise users must
+  /// enter their own on the Last.fm login page.
+  static bool get hasBuiltInApiKey =>
+      Env.lastFmApiKey.isNotEmpty && Env.lastFmApiKey != "none";
+
+  // A personal API key (saved on login) takes precedence over the built-in one
+  static bool get _hasPersonalApiKey =>
+      (KVStoreService.lastFmApiKey?.isNotEmpty ?? false) &&
+      (KVStoreService.lastFmApiSecret?.isNotEmpty ?? false);
+  static String get _apiKey =>
+      _hasPersonalApiKey ? KVStoreService.lastFmApiKey! : Env.lastFmApiKey;
+  static String get _apiSecret => _hasPersonalApiKey
+      ? KVStoreService.lastFmApiSecret!
+      : Env.lastFmApiSecret;
+
   final StreamController<SpotubeTrackObject> _scrobbleController =
       StreamController<SpotubeTrackObject>.broadcast();
   @override
@@ -27,8 +43,8 @@ class ScrobblerNotifier extends AsyncNotifier<Scrobblenaut?> {
           state = await AsyncValue.guard(
             () async => Scrobblenaut(
               lastFM: await LastFM.authenticateWithPasswordHash(
-                apiKey: Env.lastFmApiKey,
-                apiSecret: Env.lastFmApiSecret,
+                apiKey: _apiKey,
+                apiSecret: _apiSecret,
                 username: event.first.username,
                 passwordHash: event.first.passwordHash.value,
               ),
@@ -69,28 +85,40 @@ class ScrobblerNotifier extends AsyncNotifier<Scrobblenaut?> {
 
     return Scrobblenaut(
       lastFM: await LastFM.authenticateWithPasswordHash(
-        apiKey: Env.lastFmApiKey,
-        apiSecret: Env.lastFmApiSecret,
+        apiKey: _apiKey,
+        apiSecret: _apiSecret,
         username: loginInfo.username,
         passwordHash: loginInfo.passwordHash.value,
       ),
     );
   }
 
+  /// [apiKey] and [apiSecret] are an optional personal Last.fm API key,
+  /// saved (and then used instead of the built-in one) if the login succeeds.
   Future<void> login(
     String username,
-    String password,
-  ) async {
+    String password, {
+    String? apiKey,
+    String? apiSecret,
+  }) async {
     final database = ref.read(databaseProvider);
 
+    final hasNewApiKey =
+        (apiKey?.isNotEmpty ?? false) && (apiSecret?.isNotEmpty ?? false);
+
     final lastFm = await LastFM.authenticate(
-      apiKey: Env.lastFmApiKey,
-      apiSecret: Env.lastFmApiSecret,
+      apiKey: hasNewApiKey ? apiKey! : _apiKey,
+      apiSecret: hasNewApiKey ? apiSecret! : _apiSecret,
       username: username,
       password: password,
     );
 
     if (!lastFm.isAuth) throw Exception("Invalid credentials");
+
+    // Before inserting the login: the table watcher re-authenticates with it
+    if (hasNewApiKey) {
+      await KVStoreService.setLastFmApiCredentials(apiKey!, apiSecret!);
+    }
 
     await database.into(database.scrobblerTable).insert(
           ScrobblerTableCompanion.insert(

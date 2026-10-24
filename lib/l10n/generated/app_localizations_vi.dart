@@ -1571,4 +1571,18 @@ class AppLocalizationsVi extends AppLocalizations {
   @override
   String get dab_music_source_description =>
       'Dành cho người yêu âm nhạc chất lượng cao. Cung cấp luồng âm thanh chất lượng cao/không nén. Phù hợp bài hát dựa trên ISRC chính xác.';
+
+  @override
+  String get lastfm_api_key => 'API key';
+
+  @override
+  String get lastfm_api_secret => 'Shared secret';
+
+  @override
+  String get lastfm_api_key_optional_info =>
+      'Optional: use your own Last.fm API key instead of the built-in one. You can create one here:';
+
+  @override
+  String get lastfm_api_key_required_info =>
+      'This build has no Last.fm API key: create your own (free) and enter it below:';
 }

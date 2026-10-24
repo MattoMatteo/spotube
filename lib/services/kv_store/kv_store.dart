@@ -47,6 +47,21 @@ abstract class KVStoreService {
         ),
       );
 
+  /// Personal Last.fm API key/secret (from the Last.fm login page), used
+  /// instead of the ones built in via .env
+  static String? get lastFmApiKey =>
+      sharedPreferences.getString('lastFmApiKey');
+  static String? get lastFmApiSecret =>
+      sharedPreferences.getString('lastFmApiSecret');
+
+  static Future<void> setLastFmApiCredentials(
+    String apiKey,
+    String apiSecret,
+  ) async {
+    await sharedPreferences.setString('lastFmApiKey', apiKey);
+    await sharedPreferences.setString('lastFmApiSecret', apiSecret);
+  }
+
   static String get encryptionKey {
     final value = sharedPreferences.getString('encryption');
 

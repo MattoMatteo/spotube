@@ -491,5 +491,9 @@
   "configure_plugins": "Configura i tuoi plugin per fornitore metadati e fonte audio",
   "source": "Fonte: ",
   "uncompressed": "Non compresso",
-  "dab_music_source_description": "Per audiophile. Fornisce flussi audio di alta qualità/senza perdita. Abbinamento traccia accurato basato su ISRC."
+  "dab_music_source_description": "Per audiophile. Fornisce flussi audio di alta qualità/senza perdita. Abbinamento traccia accurato basato su ISRC.",
+  "lastfm_api_key": "Chiave API",
+  "lastfm_api_secret": "Segreto condiviso (shared secret)",
+  "lastfm_api_key_optional_info": "Facoltativo: usa una tua chiave API di Last.fm invece di quella inclusa. Puoi crearla qui:",
+  "lastfm_api_key_required_info": "Questa build non include una chiave API di Last.fm: creane una tua (gratuita) e inseriscila qui sotto:"
 }

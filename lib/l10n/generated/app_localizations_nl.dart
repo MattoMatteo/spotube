@@ -1567,4 +1567,18 @@ class AppLocalizationsNl extends AppLocalizations {
   @override
   String get dab_music_source_description =>
       'Voor audiofielen. Biedt hoge kwaliteit/lossless audiostreams. Nauwkeurige trackmatching op basis van ISRC.';
+
+  @override
+  String get lastfm_api_key => 'API key';
+
+  @override
+  String get lastfm_api_secret => 'Shared secret';
+
+  @override
+  String get lastfm_api_key_optional_info =>
+      'Optional: use your own Last.fm API key instead of the built-in one. You can create one here:';
+
+  @override
+  String get lastfm_api_key_required_info =>
+      'This build has no Last.fm API key: create your own (free) and enter it below:';
 }

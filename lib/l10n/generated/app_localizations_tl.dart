@@ -1578,4 +1578,18 @@ class AppLocalizationsTl extends AppLocalizations {
   @override
   String get dab_music_source_description =>
       'Para sa mga audiophile. Nagbibigay ng de-kalidad/walang loss na audio streams. Tumpak na pagtutugma ng track batay sa ISRC.';
+
+  @override
+  String get lastfm_api_key => 'API key';
+
+  @override
+  String get lastfm_api_secret => 'Shared secret';
+
+  @override
+  String get lastfm_api_key_optional_info =>
+      'Optional: use your own Last.fm API key instead of the built-in one. You can create one here:';
+
+  @override
+  String get lastfm_api_key_required_info =>
+      'This build has no Last.fm API key: create your own (free) and enter it below:';
 }

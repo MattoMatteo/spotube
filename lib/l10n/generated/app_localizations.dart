@@ -2978,6 +2978,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'For audiophiles. Provides high-quality/lossless audio streams. Accurate ISRC based track matching.'**
   String get dab_music_source_description;
+
+  /// No description provided for @lastfm_api_key.
+  ///
+  /// In en, this message translates to:
+  /// **'API key'**
+  String get lastfm_api_key;
+
+  /// No description provided for @lastfm_api_secret.
+  ///
+  /// In en, this message translates to:
+  /// **'Shared secret'**
+  String get lastfm_api_secret;
+
+  /// No description provided for @lastfm_api_key_optional_info.
+  ///
+  /// In en, this message translates to:
+  /// **'Optional: use your own Last.fm API key instead of the built-in one. You can create one here:'**
+  String get lastfm_api_key_optional_info;
+
+  /// No description provided for @lastfm_api_key_required_info.
+  ///
+  /// In en, this message translates to:
+  /// **'This build has no Last.fm API key: create your own (free) and enter it below:'**
+  String get lastfm_api_key_required_info;
 }
 
 class _AppLocalizationsDelegate

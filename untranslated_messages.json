@@ -1,1 +1,197 @@
-{}
+{
+  "ar": [
+    "lastfm_api_key",
+    "lastfm_api_secret",
+    "lastfm_api_key_optional_info",
+    "lastfm_api_key_required_info"
+  ],
+
+  "bn": [
+    "lastfm_api_key",
+    "lastfm_api_secret",
+    "lastfm_api_key_optional_info",
+    "lastfm_api_key_required_info"
+  ],
+
+  "ca": [
+    "lastfm_api_key",
+    "lastfm_api_secret",
+    "lastfm_api_key_optional_info",
+    "lastfm_api_key_required_info"
+  ],
+
+  "cs": [
+    "lastfm_api_key",
+    "lastfm_api_secret",
+    "lastfm_api_key_optional_info",
+    "lastfm_api_key_required_info"
+  ],
+
+  "de": [
+    "lastfm_api_key",
+    "lastfm_api_secret",
+    "lastfm_api_key_optional_info",
+    "lastfm_api_key_required_info"
+  ],
+
+  "es": [
+    "lastfm_api_key",
+    "lastfm_api_secret",
+    "lastfm_api_key_optional_info",
+    "lastfm_api_key_required_info"
+  ],
+
+  "eu": [
+    "lastfm_api_key",
+    "lastfm_api_secret",
+    "lastfm_api_key_optional_info",
+    "lastfm_api_key_required_info"
+  ],
+
+  "fa": [
+    "lastfm_api_key",
+    "lastfm_api_secret",
+    "lastfm_api_key_optional_info",
+    "lastfm_api_key_required_info"
+  ],
+
+  "fi": [
+    "lastfm_api_key",
+    "lastfm_api_secret",
+    "lastfm_api_key_optional_info",
+    "lastfm_api_key_required_info"
+  ],
+
+  "fr": [
+    "lastfm_api_key",
+    "lastfm_api_secret",
+    "lastfm_api_key_optional_info",
+    "lastfm_api_key_required_info"
+  ],
+
+  "hi": [
+    "lastfm_api_key",
+    "lastfm_api_secret",
+    "lastfm_api_key_optional_info",
+    "lastfm_api_key_required_info"
+  ],
+
+  "id": [
+    "lastfm_api_key",
+    "lastfm_api_secret",
+    "lastfm_api_key_optional_info",
+    "lastfm_api_key_required_info"
+  ],
+
+  "ja": [
+    "lastfm_api_key",
+    "lastfm_api_secret",
+    "lastfm_api_key_optional_info",
+    "lastfm_api_key_required_info"
+  ],
+
+  "ka": [
+    "lastfm_api_key",
+    "lastfm_api_secret",
+    "lastfm_api_key_optional_info",
+    "lastfm_api_key_required_info"
+  ],
+
+  "ko": [
+    "lastfm_api_key",
+    "lastfm_api_secret",
+    "lastfm_api_key_optional_info",
+    "lastfm_api_key_required_info"
+  ],
+
+  "ne": [
+    "lastfm_api_key",
+    "lastfm_api_secret",
+    "lastfm_api_key_optional_info",
+    "lastfm_api_key_required_info"
+  ],
+
+  "nl": [
+    "lastfm_api_key",
+    "lastfm_api_secret",
+    "lastfm_api_key_optional_info",
+    "lastfm_api_key_required_info"
+  ],
+
+  "pl": [
+    "lastfm_api_key",
+    "lastfm_api_secret",
+    "lastfm_api_key_optional_info",
+    "lastfm_api_key_required_info"
+  ],
+
+  "pt": [
+    "lastfm_api_key",
+    "lastfm_api_secret",
+    "lastfm_api_key_optional_info",
+    "lastfm_api_key_required_info"
+  ],
+
+  "ru": [
+    "lastfm_api_key",
+    "lastfm_api_secret",
+    "lastfm_api_key_optional_info",
+    "lastfm_api_key_required_info"
+  ],
+
+  "ta": [
+    "lastfm_api_key",
+    "lastfm_api_secret",
+    "lastfm_api_key_optional_info",
+    "lastfm_api_key_required_info"
+  ],
+
+  "th": [
+    "lastfm_api_key",
+    "lastfm_api_secret",
+    "lastfm_api_key_optional_info",
+    "lastfm_api_key_required_info"
+  ],
+
+  "tl": [
+    "lastfm_api_key",
+    "lastfm_api_secret",
+    "lastfm_api_key_optional_info",
+    "lastfm_api_key_required_info"
+  ],
+
+  "tr": [
+    "lastfm_api_key",
+    "lastfm_api_secret",
+    "lastfm_api_key_optional_info",
+    "lastfm_api_key_required_info"
+  ],
+
+  "uk": [
+    "lastfm_api_key",
+    "lastfm_api_secret",
+    "lastfm_api_key_optional_info",
+    "lastfm_api_key_required_info"
+  ],
+
+  "vi": [
+    "lastfm_api_key",
+    "lastfm_api_secret",
+    "lastfm_api_key_optional_info",
+    "lastfm_api_key_required_info"
+  ],
+
+  "zh": [
+    "lastfm_api_key",
+    "lastfm_api_secret",
+    "lastfm_api_key_optional_info",
+    "lastfm_api_key_required_info"
+  ],
+
+  "zh_TW": [
+    "lastfm_api_key",
+    "lastfm_api_secret",
+    "lastfm_api_key_optional_info",
+    "lastfm_api_key_required_info"
+  ]
+}
