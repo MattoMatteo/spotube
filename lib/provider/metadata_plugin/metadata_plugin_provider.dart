@@ -178,9 +178,16 @@ class MetadataPluginNotifier extends AsyncNotifier<MetadataPluginState> {
 
   Future<void> _loadDefaultPlugins(MetadataPluginState pluginState) async {
     const plugins = [
+      "spotube-plugin-spotify",
       "spotube-plugin-musicbrainz-listenbrainz",
       "spotube-plugin-youtube-audio",
     ];
+
+    // On a fresh install the patched Spotify plugin is the default metadata
+    // plugin. addPlugin can't decide it here: the state is still loading, so
+    // every bundled metadata plugin gets marked as selected.
+    final isFirstRun = pluginState.plugins.isEmpty;
+    PluginConfiguration? firstRunDefaultMetadata;
 
     for (final plugin in plugins) {
       final byteData = await rootBundle.load(
@@ -190,6 +197,9 @@ class MetadataPluginNotifier extends AsyncNotifier<MetadataPluginState> {
           await extractPluginArchive(byteData.buffer.asUint8List());
       try {
         await addPlugin(pluginConfig);
+        if (isFirstRun && plugin == "spotube-plugin-spotify") {
+          firstRunDefaultMetadata = pluginConfig;
+        }
       } on MetadataPluginException catch (e) {
         if (e.errorCode == MetadataPluginErrorCode.duplicatePlugin &&
             await isPluginUpdate(pluginConfig)) {
@@ -212,6 +222,10 @@ class MetadataPluginNotifier extends AsyncNotifier<MetadataPluginState> {
           }
         }
       }
+    }
+
+    if (firstRunDefaultMetadata != null) {
+      await setDefaultMetadataPlugin(firstRunDefaultMetadata);
     }
   }
 

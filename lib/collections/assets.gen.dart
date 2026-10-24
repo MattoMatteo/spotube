@@ -74,6 +74,10 @@ class $AssetsPluginsGen {
       get spotubePluginMusicbrainzListenbrainz =>
           const $AssetsPluginsSpotubePluginMusicbrainzListenbrainzGen();
 
+  /// Directory path: assets/plugins/spotube-plugin-spotify
+  $AssetsPluginsSpotubePluginSpotifyGen get spotubePluginSpotify =>
+      const $AssetsPluginsSpotubePluginSpotifyGen();
+
   /// Directory path: assets/plugins/spotube-plugin-youtube-audio
   $AssetsPluginsSpotubePluginYoutubeAudioGen get spotubePluginYoutubeAudio =>
       const $AssetsPluginsSpotubePluginYoutubeAudioGen();
@@ -104,6 +108,16 @@ class $AssetsPluginsSpotubePluginMusicbrainzListenbrainzGen {
   /// File path: assets/plugins/spotube-plugin-musicbrainz-listenbrainz/plugin.smplug
   String get plugin =>
       'assets/plugins/spotube-plugin-musicbrainz-listenbrainz/plugin.smplug';
+
+  /// List of all assets
+  List<String> get values => [plugin];
+}
+
+class $AssetsPluginsSpotubePluginSpotifyGen {
+  const $AssetsPluginsSpotubePluginSpotifyGen();
+
+  /// File path: assets/plugins/spotube-plugin-spotify/plugin.smplug
+  String get plugin => 'assets/plugins/spotube-plugin-spotify/plugin.smplug';
 
   /// List of all assets
   List<String> get values => [plugin];
