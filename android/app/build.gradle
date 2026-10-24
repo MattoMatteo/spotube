@@ -28,6 +28,9 @@ def keystorePropertiesFile = rootProject.file('key.properties')
 if (keystorePropertiesFile.exists()) {
     keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 }
+// Without android/key.properties (local builds) sign with the debug key, so the
+// APK is still installable. CI always provides the fork's release keystore.
+def hasReleaseKeystore = keystorePropertiesFile.exists()
 
 def composeVersion = "1.4.8"
 
@@ -80,10 +83,10 @@ android {
 
     buildTypes {
         release {
-            signingConfig signingConfigs.release
+            signingConfig hasReleaseKeystore ? signingConfigs.release : signingConfigs.debug
         }
         debug {
-            signingConfig signingConfigs.release
+            signingConfig hasReleaseKeystore ? signingConfigs.release : signingConfigs.debug
         }
     }
 
@@ -95,19 +98,22 @@ android {
             resValue "string", "app_name_en", "Spotube Nightly"
             applicationIdSuffix ".nightly"
             versionNameSuffix "-nightly"
-            signingConfig signingConfigs.release
+            signingConfig hasReleaseKeystore ? signingConfigs.release : signingConfigs.debug
         }
         dev {
             dimension "default"
             resValue "string", "app_name_en", "Spotube Dev"
             applicationIdSuffix ".dev"
             versionNameSuffix "-dev"
-            signingConfig signingConfigs.release
+            signingConfig hasReleaseKeystore ? signingConfigs.release : signingConfigs.debug
         }
         stable {
             dimension "default"
-            resValue "string", "app_name_en", "Spotube"
-            signingConfig signingConfigs.release
+            // Fork build: own id and name, so it installs next to the official
+            // Spotube (an APK signed with another key can't replace it)
+            resValue "string", "app_name_en", "Spotube ME"
+            applicationIdSuffix ".matteo"
+            signingConfig hasReleaseKeystore ? signingConfigs.release : signingConfigs.debug
         }
     }
 
