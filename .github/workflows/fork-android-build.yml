@@ -1,0 +1,101 @@
+# Android APK for this fork of Spotube 5.1.2 ("Spotube ME", id
+# oss.krtirtho.spotube.matteo, installs next to the official app).
+# Mirrors the Android job of spotube-release-binary.yml and uploads the APK to
+# the same pre-release as fork-windows-build.yml (no Actions artifacts).
+name: Fork Android Build
+on:
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        type: string
+        description: Pre-release tag the APK is uploaded to (replaced on every build)
+        default: v5.1.2-fork
+
+env:
+  FLUTTER_VERSION: 3.35.2
+  FLUTTER_CHANNEL: master
+
+permissions:
+  contents: write
+
+jobs:
+  android:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+
+      # The APK must be signed with the fork's own key, always the same one,
+      # or installed builds can't be updated: fail instead of falling back to
+      # android/app/build.gradle's debug signing
+      - name: Check signing secrets
+        env:
+          KEYSTORE: ${{ secrets.KEYSTORE }}
+          KEY_PROPERTIES: ${{ secrets.KEY_PROPERTIES }}
+        run: |
+          if [ -z "$KEYSTORE" ] || [ -z "$KEY_PROPERTIES" ]; then
+            echo "::error::Repository secrets KEYSTORE and KEY_PROPERTIES are required to sign the APK"
+            exit 1
+          fi
+
+      - uses: subosito/flutter-action@v2.18.0
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: ${{ env.FLUTTER_CHANNEL }}
+          cache: true
+          git-source: https://github.com/flutter/flutter.git
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: "zulu"
+          java-version: "17"
+          cache: "gradle"
+
+      - name: Setup Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          toolchain: stable
+
+      - name: Install android dependencies
+        run: |
+          flutter pub get
+          dart cli/cli.dart install-dependencies --platform=android --arch=all
+
+      - name: Sign Apk
+        env:
+          KEYSTORE: ${{ secrets.KEYSTORE }}
+          KEY_PROPERTIES: ${{ secrets.KEY_PROPERTIES }}
+        run: |
+          echo "$KEYSTORE" | base64 --decode > android/app/upload-keystore.jks
+          echo "$KEY_PROPERTIES" > android/key.properties
+
+      - name: Build android APK
+        run: dart cli/cli.dart build --arch=all android
+        env:
+          CHANNEL: stable
+          # Same .env as the Windows build: no update check, optional Last.fm keys
+          DOTENV: |
+            ENABLE_UPDATE_CHECK=0
+            HIDE_DONATIONS=0
+            LASTFM_API_KEY=${{ secrets.LASTFM_API_KEY || 'none' }}
+            LASTFM_API_SECRET=${{ secrets.LASTFM_API_SECRET || 'none' }}
+
+      - name: Show APK signer
+        run: |
+          apksigner=$(ls "$ANDROID_HOME"/build-tools/*/apksigner | tail -1)
+          "$apksigner" verify --print-certs build/Spotube-android-all-arch.apk | grep -E "Signer #1 certificate (DN|SHA-256)"
+
+      - name: Upload APK to pre-release ${{ inputs.release_tag }}
+        uses: ncipollo/release-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          tag: ${{ inputs.release_tag }}
+          commit: ${{ github.sha }}
+          name: Spotube 5.1.2 (fork build)
+          prerelease: true
+          allowUpdates: true
+          omitBodyDuringUpdate: true
+          omitNameDuringUpdate: true
+          # Only replaces assets with the same name: the Windows installer stays
+          replacesArtifacts: true
+          artifacts: build/Spotube-android-all-arch.apk
