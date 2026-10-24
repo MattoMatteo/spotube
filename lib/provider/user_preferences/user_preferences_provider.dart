@@ -29,6 +29,10 @@ class UserPreferencesNotifier extends Notifier<PreferencesTableData> {
               PreferencesTableCompanion.insert(
                 id: const Value(0),
                 downloadLocation: Value(await _getDefaultDownloadDirectory()),
+                // Otherwise the column default (YouTubeExplode) applies instead
+                // of the intended platform default (NewPipe except on iOS)
+                youtubeClientEngine:
+                    Value(PreferencesTable.defaults().youtubeClientEngine),
               ),
             );
       }
