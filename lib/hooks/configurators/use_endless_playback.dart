@@ -13,6 +13,18 @@ void useEndlessPlayback(WidgetRef ref) {
       ref.watch(userPreferencesProvider.select((s) => s.endlessPlayback));
   final metadataPlugin = ref.watch(metadataPluginProvider.future);
 
+  // Reaching the last track triggers the listener twice: from
+  // currentIndexChangedStream and from this effect re-running on the new
+  // currentIndex. Two concurrent radio() calls then interleaved the same
+  // tracks into the queue. These refs outlive the effect re-runs.
+  final isFetchingRadio = useRef(false);
+  final lastRadioSeedId = useRef<String?>(null);
+
+  // A different last track means the queue changed: allow a new radio fetch.
+  if (audioPlayerState.tracks.lastOrNull?.id != lastRadioSeedId.value) {
+    lastRadioSeedId.value = null;
+  }
+
   useEffect(
     () {
       if (!endlessPlayback) return null;
@@ -24,20 +36,33 @@ void useEndlessPlayback(WidgetRef ref) {
 
           final track = playlist.tracks.last;
 
+          // One fetch at a time, and once per seed track (also avoids
+          // refetching when the radio had nothing new to add)
+          if (isFetchingRadio.value || lastRadioSeedId.value == track.id) {
+            return;
+          }
+          isFetchingRadio.value = true;
+          lastRadioSeedId.value = track.id;
+
           final tracks = await (await metadataPlugin)?.track.radio(track.id);
 
           if (tracks == null || tracks.isEmpty) return;
 
+          final seenIds = <String>{};
           await playback.addTracks(
             tracks.toList()
               ..removeWhere((e) {
                 final playlist = ref.read(audioPlayerProvider);
                 final isDuplicate = playlist.tracks.any((t) => t.id == e.id);
-                return e.id == track.id || isDuplicate;
+                return e.id == track.id || isDuplicate || !seenIds.add(e.id);
               }),
           );
         } catch (e, stack) {
+          // Let a failed fetch be retried
+          lastRadioSeedId.value = null;
           AppLogger.reportError(e, stack);
+        } finally {
+          isFetchingRadio.value = false;
         }
       }
 
