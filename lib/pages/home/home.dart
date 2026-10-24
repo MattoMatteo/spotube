@@ -15,6 +15,7 @@ import 'package:spotube/components/titlebar/titlebar.dart';
 import 'package:spotube/extensions/constrains.dart';
 import 'package:spotube/provider/user_preferences/user_preferences_provider.dart';
 import 'package:spotube/utils/platform.dart';
+import 'package:spotube/components/spotube_logo_text.dart';
 
 @RoutePage()
 class HomePage extends HookConsumerWidget {
@@ -41,15 +42,7 @@ class HomePage extends HookConsumerWidget {
               if (mediaQuery.smAndDown || layoutMode == LayoutMode.compact)
                 SliverAppBar(
                   floating: true,
-                  title: DefaultTextStyle(
-                    style: TextStyle(
-                      fontFamily: "Cookie",
-                      fontSize: 30,
-                      letterSpacing: 1.8,
-                      color: theme.colorScheme.foreground,
-                    ),
-                    child: const Text("Spotube"),
-                  ),
+                  title: const SpotubeLogoText(),
                   backgroundColor: theme.colorScheme.background,
                   foregroundColor: theme.colorScheme.foreground,
                   actions: [

@@ -10,6 +10,7 @@ import 'package:spotube/extensions/context.dart';
 import 'package:spotube/modules/root/sidebar/sidebar_footer.dart';
 
 import 'package:spotube/provider/user_preferences/user_preferences_provider.dart';
+import 'package:spotube/components/spotube_logo_text.dart';
 
 class Sidebar extends HookConsumerWidget {
   final Widget child;
@@ -21,7 +22,6 @@ class Sidebar extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final ThemeData(:colorScheme) = Theme.of(context);
     final mediaQuery = MediaQuery.sizeOf(context);
 
     final layoutMode =
@@ -52,17 +52,7 @@ class Sidebar extends HookConsumerWidget {
 
     final navigationButtons = [
       NavigationLabel(
-        child: mediaQuery.lgAndUp
-            ? DefaultTextStyle(
-                style: TextStyle(
-                  fontFamily: "Cookie",
-                  fontSize: 30,
-                  letterSpacing: 1.8,
-                  color: colorScheme.foreground,
-                ),
-                child: const Text("Spotube"),
-              )
-            : const Text(""),
+        child: mediaQuery.lgAndUp ? const SpotubeLogoText() : const Text(""),
       ),
       for (final tile in sidebarTileList)
         NavigationButton(
