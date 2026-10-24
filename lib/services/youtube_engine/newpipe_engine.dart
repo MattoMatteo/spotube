@@ -53,7 +53,7 @@ class NewPipeEngine implements YouTubeEngine {
       VideoId(info.id),
       info.name,
       info.uploaderName,
-      ChannelId(info.uploaderUrl),
+      _channelIdOf(info.uploaderUrl),
       // uploadDate/description may be missing in reduced YouTube responses
       info.uploadDate?.offsetDateTime,
       info.uploadDate?.offsetDateTime.toString(),
@@ -71,13 +71,23 @@ class NewPipeEngine implements YouTubeEngine {
     );
   }
 
+  // Placeholder for results without a channel: YouTube Music songs by artists
+  // without a YouTube channel have no uploaderUrl, and ChannelId("") throws.
+  // The channel is only informative, it isn't used for playback.
+  static final _unknownChannelId = ChannelId("UC${"0" * 22}");
+
+  static ChannelId _channelIdOf(String uploaderUrl) =>
+      ChannelId.parseChannelId(uploaderUrl) != null
+          ? ChannelId(uploaderUrl)
+          : _unknownChannelId;
+
   Video _parseVideoResult(VideoSearchResultItem info) {
     final id = Uri.parse(info.url).queryParameters["v"]!;
     return Video(
       VideoId(id),
       info.name,
       info.uploaderName,
-      ChannelId(info.uploaderUrl),
+      _channelIdOf(info.uploaderUrl),
       info.uploadDate?.offsetDateTime,
       info.uploadDate?.offsetDateTime.toString(),
       info.uploadDate?.offsetDateTime,
