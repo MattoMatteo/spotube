@@ -133,19 +133,61 @@ class NewPipeEngine implements YouTubeEngine {
     return (_parseVideo(video), StreamManifest(streams));
   }
 
+  /// Prefers YouTube Music songs: they are the official album tracks (right
+  /// length, no music video intros or third-party uploads) and aren't
+  /// filtered like YouTube's anonymous video search, which e.g. returns
+  /// nothing for queries containing "X-Rated". On 60 real tracks the first
+  /// song matched Spotify's duration (within 10s) 59 times, the first video
+  /// 47. Falls back to videos when the first song doesn't match the query.
   @override
   Future<List<Video>> searchVideos(String query) async {
+    final songs = await _search(query, SearchContentFilters.musicSongs);
+    if (songs.isNotEmpty && _songMatchesQuery(songs.first, query)) {
+      return songs;
+    }
+
+    final videos = await _search(query, SearchContentFilters.videos);
+    return videos.isNotEmpty ? videos : songs;
+  }
+
+  Future<List<Video>> _search(
+    String query,
+    SearchContentFilters contentFilter,
+  ) async {
     final results = await NewPipeExtractor.search(
       query,
-      contentFilters: [SearchContentFilters.videos],
+      contentFilters: [contentFilter],
     );
 
-    final resultsWithVideos = results
+    return results
         .whereType<VideoSearchResultItem>()
         .map((e) => _parseVideoResult(e))
         .toList();
+  }
 
-    return resultsWithVideos;
+  static final _isrcRegex = RegExp(r'^[A-Z]{2}[A-Z0-9]{3}\d{7}$');
+
+  /// The audio source plugin searches either a track's ISRC (an exact lookup)
+  /// or "<title> <artists>". For the latter, YouTube Music still returns
+  /// songs when the track isn't there, so require the song's title and
+  /// artist to be in the query.
+  static bool _songMatchesQuery(Video song, String query) {
+    if (_isrcRegex.hasMatch(query.trim())) return true;
+
+    String normalize(String text) => text
+        .toLowerCase()
+        .replaceAll(RegExp(r'\(.*?\)|\[.*?\]'), ' ') // (feat. x), [Remastered]
+        .replaceAll(RegExp(r'[^\p{L}\p{N}]+', unicode: true), ' ')
+        .trim();
+
+    final normalizedQuery = normalize(query);
+    final title = normalize(song.title);
+    final artist = normalize(song.author).replaceFirst(RegExp(r'^the '), '');
+
+    return title.isNotEmpty &&
+        artist.isNotEmpty &&
+        normalizedQuery.contains(title) &&
+        normalizedQuery.contains(artist);
   }
 
   @override
