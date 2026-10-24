@@ -947,7 +947,7 @@ packages:
     description:
       path: "."
       ref: nullable-video-info
-      resolved-ref: "5bf4da184ebcf92a35566c243253384c4e106796"
+      resolved-ref: a98f71414791a58910b60d3775d43b3c6b7a4acd
       url: "https://github.com/MattoMatteo/flutter_new_pipe_extractor"
     source: git
     version: "0.1.0"
