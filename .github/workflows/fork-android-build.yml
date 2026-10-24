@@ -80,10 +80,19 @@ jobs:
             LASTFM_API_KEY=${{ secrets.LASTFM_API_KEY || 'none' }}
             LASTFM_API_SECRET=${{ secrets.LASTFM_API_SECRET || 'none' }}
 
+      # Informational only: should show the fork's certificate (CN=Matteo Calautti...)
       - name: Show APK signer
+        continue-on-error: true
         run: |
-          apksigner=$(ls "$ANDROID_HOME"/build-tools/*/apksigner | tail -1)
-          "$apksigner" verify --print-certs build/Spotube-android-all-arch.apk | grep -E "Signer #1 certificate (DN|SHA-256)"
+          apk=build/Spotube-android-all-arch.apk
+          ls -la "$apk"
+          apksigner=$(ls "$ANDROID_HOME"/build-tools/*/apksigner 2>/dev/null | tail -1)
+          if [ -n "$apksigner" ]; then
+            "$apksigner" verify --print-certs "$apk" 2>&1 | head -20 || true
+          else
+            echo "apksigner not found under $ANDROID_HOME/build-tools"
+          fi
+          keytool -printcert -jarfile "$apk" 2>&1 | head -12 || true
 
       - name: Upload APK to pre-release ${{ inputs.release_tag }}
         uses: ncipollo/release-action@v1
