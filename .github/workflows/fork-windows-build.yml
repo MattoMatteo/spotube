@@ -20,7 +20,9 @@ permissions:
 
 jobs:
   windows:
-    runs-on: windows-2025
+    # windows-2025 now ships Visual Studio 2026, which Flutter 3.35.2 doesn't recognise
+    # (falls back to the missing "Visual Studio 16 2019" generator). 2022 has VS 2022.
+    runs-on: windows-2022
     steps:
       - uses: actions/checkout@v4
 
