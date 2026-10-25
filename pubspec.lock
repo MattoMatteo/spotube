@@ -947,7 +947,7 @@ packages:
     description:
       path: "."
       ref: main
-      resolved-ref: "0baf71250fd2820179fb8d57675b1606d57d4290"
+      resolved-ref: "7dc33d7acf631da5dd7de093858a68b26252d6fa"
       url: "https://github.com/MattoMatteo/flutter_new_pipe_extractor"
     source: git
     version: "0.1.0"
