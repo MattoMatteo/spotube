@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:math';
 
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:media_kit/media_kit.dart' hide Track;
 import 'package:spotube/models/metadata/metadata.dart';
 import 'package:spotube/provider/audio_player/audio_player.dart';
 import 'package:spotube/provider/audio_player/state.dart';
@@ -31,6 +32,7 @@ class AudioPlayerStreamListeners {
       subscribeToScrobbleChanged(),
       subscribeToPosition(),
       subscribeToPlayerError(),
+      ...subscribeToEndlessPlayback(),
     ];
 
     ref.onDispose(() {
@@ -172,6 +174,106 @@ class AudioPlayerStreamListeners {
 
   StreamSubscription subscribeToPlayerError() {
     return audioPlayer.errorStream.listen((event) {});
+  }
+
+  /// Endless playback: when the queue is about to end, adds the radio of its
+  /// last track. It lives here rather than in the UI so it also works when the
+  /// app runs in the background or is started by Android Auto.
+  ///
+  /// Only while playing: the queue restored at startup is left alone, and the
+  /// first track of a new queue gets loaded before the radio is appended
+  List<StreamSubscription> subscribeToEndlessPlayback() {
+    // Fetching a few tracks before the end leaves no gap on slow networks,
+    // and a single track starts its radio right away
+    const remainingTracks = 2;
+    // Several events arrive for the same queue: one fetch at a time, and once
+    // per seed track (also when its radio had nothing new to add)
+    bool isFetching = false;
+    String? lastSeedId;
+
+    // When the app was just started, e.g. by Android Auto, the plugin may
+    // still be refreshing its token and fail (or find nothing): with a single
+    // track no other queue change would trigger another try, so retry here
+    Future<List<SpotubeFullTrackObject>> fetchRadio(
+      SpotubeFullTrackObject seed,
+    ) async {
+      for (var attempt = 1;; attempt++) {
+        AppLogger.log.i(
+          "Endless playback: fetching the radio of ${seed.name} "
+          "(attempt $attempt)",
+        );
+        try {
+          final metadataPlugin = await ref.read(metadataPluginProvider.future);
+          final radio = await metadataPlugin?.track.radio(seed.id) ?? [];
+          if (radio.isNotEmpty || attempt == 3) return radio;
+        } catch (e) {
+          if (attempt == 3) rethrow;
+          AppLogger.log.w("Endless playback: radio failed: $e");
+        }
+        await Future.delayed(Duration(seconds: 5 * attempt));
+      }
+    }
+
+    Future<void> fillQueue() async {
+      try {
+        final state = audioPlayerState;
+        final seed = state.tracks.lastOrNull;
+        if (!preferences.endlessPlayback ||
+            !audioPlayer.isPlaying ||
+            state.loopMode != PlaylistMode.none ||
+            seed is! SpotubeFullTrackObject ||
+            state.tracks.length - 1 - state.currentIndex > remainingTracks ||
+            isFetching ||
+            lastSeedId == seed.id) {
+          return;
+        }
+        isFetching = true;
+        lastSeedId = seed.id;
+
+        final radio = await fetchRadio(seed);
+        // The queue may have changed meanwhile
+        if (radio.isEmpty ||
+            audioPlayerState.tracks.lastOrNull?.id != seed.id) {
+          return;
+        }
+
+        final queuedIds = audioPlayerState.tracks.map((t) => t.id).toSet();
+        final newTracks =
+            radio.where((track) => queuedIds.add(track.id)).toList();
+        AppLogger.log.i(
+          "Endless playback: adding ${newTracks.length} tracks from the radio "
+          "of ${seed.name}",
+        );
+        await ref.read(audioPlayerProvider.notifier).addTracks(newTracks);
+      } catch (e, stack) {
+        // Let the next queue change try again
+        lastSeedId = null;
+        AppLogger.reportError(e, stack);
+      } finally {
+        isFetching = false;
+      }
+    }
+
+    // The player reports every track it appends, so while tracks are added
+    // the queue briefly looks almost over: wait for it to settle
+    Timer? settle;
+    void scheduleFill() {
+      settle?.cancel();
+      settle = Timer(const Duration(seconds: 2), fillQueue);
+    }
+
+    ref.onDispose(() => settle?.cancel());
+
+    // Turning the setting on while the last track plays
+    ref.listen(
+      userPreferencesProvider.select((s) => s.endlessPlayback),
+      (_, __) => scheduleFill(),
+    );
+
+    return [
+      audioPlayer.playlistStream.listen((_) => scheduleFill()),
+      audioPlayer.playingStream.listen((_) => scheduleFill()),
+    ];
   }
 }
 

@@ -116,7 +116,8 @@ class TrackOptionsActions {
       await playback.stop();
       await playback.load([track], autoPlay: true);
 
-      // we don't have to add those tracks as useEndlessPlayback will do it for us
+      // we don't have to add those tracks as the endless playback listener
+      // (AudioPlayerStreamListeners) will do it for us
       return;
     } else {
       await playback.addTrack(track);
