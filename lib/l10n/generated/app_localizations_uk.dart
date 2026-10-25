@@ -492,13 +492,13 @@ class AppLocalizationsUk extends AppLocalizations {
   String get about => 'Про';
 
   @override
-  String get u_love_spotube => 'Ми знаємо, що ви любите Spotube';
+  String get u_love_spotube => 'Ми знаємо, що ви любите Matubefy';
 
   @override
   String get check_for_updates => 'Перевірити наявність оновлень';
 
   @override
-  String get about_spotube => 'Про Spotube';
+  String get about_spotube => 'Про Matubefy';
 
   @override
   String get blacklist => 'Чорний список';
@@ -508,7 +508,7 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get spotube_description =>
-      'Spotube, легкий, кросплатформовий, безкоштовний клієнт Spotify';
+      'Matubefy, легкий, кросплатформовий, безкоштовний клієнт Spotify';
 
   @override
   String get version => 'Версія';
@@ -731,7 +731,7 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get download_ip_ban_warning =>
-      'До речі, ваш IP може бути заблокований на YouTube через надмірну кількість запитів на завантаження, ніж зазвичай. Блокування IP-адреси означає, що ви не зможете користуватися YouTube (навіть якщо ви увійшли в систему) протягом щонайменше 2-3 місяців з цього пристрою. І Spotube не несе жодної відповідальності, якщо це станеться';
+      'До речі, ваш IP може бути заблокований на YouTube через надмірну кількість запитів на завантаження, ніж зазвичай. Блокування IP-адреси означає, що ви не зможете користуватися YouTube (навіть якщо ви увійшли в систему) протягом щонайменше 2-3 місяців з цього пристрою. І Matubefy не несе жодної відповідальності, якщо це станеться';
 
   @override
   String get by_clicking_accept_terms =>
@@ -746,7 +746,7 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get download_agreement_3 =>
-      'Я повністю усвідомлюю, що мій IP може бути заблокований на YouTube, і я не покладаю на Spotube або його власників/контрибуторів відповідальність за будь-які нещасні випадки, спричинені моїми діями.';
+      'Я повністю усвідомлюю, що мій IP може бути заблокований на YouTube, і я не покладаю на Matubefy або його власників/контрибуторів відповідальність за будь-які нещасні випадки, спричинені моїми діями.';
 
   @override
   String get decline => 'Відхилити';
@@ -828,7 +828,7 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get encryption_failed_warning =>
-      'Spotube використовує шифрування для безпечного зберігання ваших даних. Але не вдалося цього зробити. Тому він перейде до небезпечного зберігання\nЯкщо ви використовуєте Linux, переконайтеся, що у вас встановлено будь-який секретний сервіс (gnome-keyring, kde-wallet, keepassxc тощо)';
+      'Matubefy використовує шифрування для безпечного зберігання ваших даних. Але не вдалося цього зробити. Тому він перейде до небезпечного зберігання\nЯкщо ви використовуєте Linux, переконайтеся, що у вас встановлено будь-який секретний сервіс (gnome-keyring, kde-wallet, keepassxc тощо)';
 
   @override
   String get querying_info => 'Запит інформації...';
@@ -1009,7 +1009,7 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get choose_your_region_description =>
-      'Це допоможе Spotube показати вам правильний контент\nдля вашого місцезнаходження.';
+      'Це допоможе Matubefy показати вам правильний контент\nдля вашого місцезнаходження.';
 
   @override
   String get choose_your_language => 'Виберіть свою мову';
@@ -1019,7 +1019,7 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get help_project_grow_description =>
-      'Spotube - це проект з відкритим кодом. Ви можете допомогти цьому проекту зростати, вносячи свій внесок у проект, повідомляючи про помилки або пропонуючи нові функції.';
+      'Matubefy - це проект з відкритим кодом. Ви можете допомогти цьому проекту зростати, вносячи свій внесок у проект, повідомляючи про помилки або пропонуючи нові функції.';
 
   @override
   String get contribute_on_github => 'Долучайтесь на GitHub';
@@ -1034,7 +1034,7 @@ class AppLocalizationsUk extends AppLocalizations {
   String get enable_connect => 'Увімкнути підключення';
 
   @override
-  String get enable_connect_description => 'Керуйте Spotube з інших пристроїв';
+  String get enable_connect_description => 'Керуйте Matubefy з інших пристроїв';
 
   @override
   String get devices => 'Пристрої';

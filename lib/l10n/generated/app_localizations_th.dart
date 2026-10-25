@@ -489,13 +489,13 @@ class AppLocalizationsTh extends AppLocalizations {
   String get about => 'เกี่ยวกับ';
 
   @override
-  String get u_love_spotube => 'เรารู้ว่าคุณรัก Spotube';
+  String get u_love_spotube => 'เรารู้ว่าคุณรัก Matubefy';
 
   @override
   String get check_for_updates => 'ตรวจสอบการปรับปรุง';
 
   @override
-  String get about_spotube => 'เกี่ยวกับ Spotube';
+  String get about_spotube => 'เกี่ยวกับ Matubefy';
 
   @override
   String get blacklist => 'แบล็กลิสต์';
@@ -505,7 +505,7 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String get spotube_description =>
-      'Spotube โปรแกรมเล่น Spotify ฟรีสำหรับทุกคน น้ำหนักเบา รองรับหลายแพลตฟอร์ม';
+      'Matubefy โปรแกรมเล่น Spotify ฟรีสำหรับทุกคน น้ำหนักเบา รองรับหลายแพลตฟอร์ม';
 
   @override
   String get version => 'รุ่น';
@@ -726,7 +726,7 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String get download_ip_ban_warning =>
-      'นอกเหนือจากนั้น IP ของคุณอาจถูกบล็อกบน YouTube เนื่องจากคำขอดาวน์โหลดมากเกินกว่าปกติ การบล็อก IP หมายความว่าคุณไม่สามารถใช้ YouTube (แม้ว่าคุณจะล็อกอินอยู่) เป็นเวลาอย่างน้อย 2-3 เดือนจากอุปกรณ์ IP นั้น และ Spotube จะไม่รับผิดชอบใด ๆ หากสิ่งนี้เกิดขึ้น';
+      'นอกเหนือจากนั้น IP ของคุณอาจถูกบล็อกบน YouTube เนื่องจากคำขอดาวน์โหลดมากเกินกว่าปกติ การบล็อก IP หมายความว่าคุณไม่สามารถใช้ YouTube (แม้ว่าคุณจะล็อกอินอยู่) เป็นเวลาอย่างน้อย 2-3 เดือนจากอุปกรณ์ IP นั้น และ Matubefy จะไม่รับผิดชอบใด ๆ หากสิ่งนี้เกิดขึ้น';
 
   @override
   String get by_clicking_accept_terms =>
@@ -742,7 +742,7 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String get download_agreement_3 =>
-      'ฉันรับทราบอย่างสมบูรณ์ว่า IP ของฉันอาจถูกบล็อกบน YouTube และฉันจะไม่ถือ Spotube หรือเจ้าของ/ผู้มีส่วนร่วมใด ๆ รับผิดชอบต่ออุบัติเหตุใด ๆ ที่เกิดจากการกระทำปัจจุบันของฉัน';
+      'ฉันรับทราบอย่างสมบูรณ์ว่า IP ของฉันอาจถูกบล็อกบน YouTube และฉันจะไม่ถือ Matubefy หรือเจ้าของ/ผู้มีส่วนร่วมใด ๆ รับผิดชอบต่ออุบัติเหตุใด ๆ ที่เกิดจากการกระทำปัจจุบันของฉัน';
 
   @override
   String get decline => 'ปฏิเสธ';
@@ -824,7 +824,7 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String get encryption_failed_warning =>
-      'Spotube ใช้การเข้ารหัสเพื่อเก็บข้อมูลของคุณอย่างปลอดภัย แต่ไม่สามารถทำได้ ดังนั้นจะเปลี่ยนเป็นการจัดเก็บที่ไม่ปลอดภัย\nหากคุณใช้ Linux โปรดตรวจสอบว่าคุณได้ติดตั้งบริการลับ (gnome-keyring, kde-wallet, keepassxc เป็นต้น)';
+      'Matubefy ใช้การเข้ารหัสเพื่อเก็บข้อมูลของคุณอย่างปลอดภัย แต่ไม่สามารถทำได้ ดังนั้นจะเปลี่ยนเป็นการจัดเก็บที่ไม่ปลอดภัย\nหากคุณใช้ Linux โปรดตรวจสอบว่าคุณได้ติดตั้งบริการลับ (gnome-keyring, kde-wallet, keepassxc เป็นต้น)';
 
   @override
   String get querying_info => 'กำลังดึงข้อมูล...';
@@ -1002,7 +1002,7 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String get choose_your_region_description =>
-      'สิ่งนี้จะช่วยให้ Spotube แสดงเนื้อหาที่เหมาะสมสำหรับคุณ';
+      'สิ่งนี้จะช่วยให้ Matubefy แสดงเนื้อหาที่เหมาะสมสำหรับคุณ';
 
   @override
   String get choose_your_language => 'เลือกภาษาของคุณ';
@@ -1012,7 +1012,7 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String get help_project_grow_description =>
-      'Spotube เป็นโครงการโอเพนซอร์ส คุณสามารถช่วยให้โครงการนี้เติบโตได้โดยการมีส่วนร่วมในโครงการ รายงานข้อบกพร่อง หรือเสนอคุณสมบัติใหม่';
+      'Matubefy เป็นโครงการโอเพนซอร์ส คุณสามารถช่วยให้โครงการนี้เติบโตได้โดยการมีส่วนร่วมในโครงการ รายงานข้อบกพร่อง หรือเสนอคุณสมบัติใหม่';
 
   @override
   String get contribute_on_github => 'มีส่วนร่วมบน GitHub';
@@ -1027,7 +1027,7 @@ class AppLocalizationsTh extends AppLocalizations {
   String get enable_connect => 'เปิดใช้งานการเชื่อมต่อ';
 
   @override
-  String get enable_connect_description => 'ควบคุม Spotube จากอุปกรณ์อื่น';
+  String get enable_connect_description => 'ควบคุม Matubefy จากอุปกรณ์อื่น';
 
   @override
   String get devices => 'อุปกรณ์';

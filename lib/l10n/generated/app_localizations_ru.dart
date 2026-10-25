@@ -491,13 +491,13 @@ class AppLocalizationsRu extends AppLocalizations {
   String get about => 'О нас';
 
   @override
-  String get u_love_spotube => 'Мы знаем что вам нравится Spotube';
+  String get u_love_spotube => 'Мы знаем что вам нравится Matubefy';
 
   @override
   String get check_for_updates => 'Проверьте наличие обновлений';
 
   @override
-  String get about_spotube => 'О Spotube';
+  String get about_spotube => 'О Matubefy';
 
   @override
   String get blacklist => 'Чёрный список';
@@ -507,7 +507,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get spotube_description =>
-      'Spotube – это легкий, кросс-платформенный клиент Spotify, предоставляющий бесплатный доступ для всех пользователей';
+      'Matubefy – это легкий, кросс-платформенный клиент Spotify, предоставляющий бесплатный доступ для всех пользователей';
 
   @override
   String get version => 'Версия';
@@ -729,7 +729,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get download_ip_ban_warning =>
-      'Кроме того, стоит учитывать, что из-за чрезмерного количества запросов на скачивание ваш IP-адрес может быть заблокирован на YouTube. Блокировка IP означает, что вы не сможете использовать YouTube (даже если вы вошли в свою учетную запись) в течение, как минимум, 2-3 месяцев с того устройства, с которого были сделаны эти запросы. Важно заметить, что Spotube не несет ответственности за такие события';
+      'Кроме того, стоит учитывать, что из-за чрезмерного количества запросов на скачивание ваш IP-адрес может быть заблокирован на YouTube. Блокировка IP означает, что вы не сможете использовать YouTube (даже если вы вошли в свою учетную запись) в течение, как минимум, 2-3 месяцев с того устройства, с которого были сделаны эти запросы. Важно заметить, что Matubefy не несет ответственности за такие события';
 
   @override
   String get by_clicking_accept_terms =>
@@ -745,7 +745,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get download_agreement_3 =>
-      'Я полностью осознаю, что мой IP-адрес может быть заблокирован на YouTube, и я не считаю Spotube или его владельцев/соавторов ответственными за какие-либо неприятности, вызванные моими текущими действиями';
+      'Я полностью осознаю, что мой IP-адрес может быть заблокирован на YouTube, и я не считаю Matubefy или его владельцев/соавторов ответственными за какие-либо неприятности, вызванные моими текущими действиями';
 
   @override
   String get decline => 'Отклонить';
@@ -827,7 +827,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get encryption_failed_warning =>
-      'Spotube использует шифрование для безопасного хранения ваших данных. Однако в этом случае произошла ошибка. Поэтому будет использовано небезопасное хранилище.\nЕсли вы используете Linux, убедитесь, что у вас установлен какой-либо инструмент для работы с секретами (gnome-keyring, kde-wallet, keepassxc и т.д.)';
+      'Matubefy использует шифрование для безопасного хранения ваших данных. Однако в этом случае произошла ошибка. Поэтому будет использовано небезопасное хранилище.\nЕсли вы используете Linux, убедитесь, что у вас установлен какой-либо инструмент для работы с секретами (gnome-keyring, kde-wallet, keepassxc и т.д.)';
 
   @override
   String get querying_info => 'Запрос информации...';
@@ -1008,7 +1008,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get choose_your_region_description =>
-      'Это поможет Spotube показать вам правильный контент\nдля вашего местоположения.';
+      'Это поможет Matubefy показать вам правильный контент\nдля вашего местоположения.';
 
   @override
   String get choose_your_language => 'Выберите ваш язык';
@@ -1018,7 +1018,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get help_project_grow_description =>
-      'Spotube - это проект с открытым исходным кодом. Вы можете помочь этому проекту развиваться, внося вклад в проект, сообщая ошибках или предлагая новые функции.';
+      'Matubefy - это проект с открытым исходным кодом. Вы можете помочь этому проекту развиваться, внося вклад в проект, сообщая ошибках или предлагая новые функции.';
 
   @override
   String get contribute_on_github => 'Внести вклад на GitHub';
@@ -1034,7 +1034,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get enable_connect_description =>
-      'Управление Spotube с других устройств';
+      'Управление Matubefy с других устройств';
 
   @override
   String get devices => 'Устройства';

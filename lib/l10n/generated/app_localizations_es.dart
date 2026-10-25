@@ -491,13 +491,13 @@ class AppLocalizationsEs extends AppLocalizations {
   String get about => 'Acerca de';
 
   @override
-  String get u_love_spotube => 'Sabemos que te encanta Spotube';
+  String get u_love_spotube => 'Sabemos que te encanta Matubefy';
 
   @override
   String get check_for_updates => 'Buscar actualizaciones';
 
   @override
-  String get about_spotube => 'Acerca de Spotube';
+  String get about_spotube => 'Acerca de Matubefy';
 
   @override
   String get blacklist => 'Lista negra';
@@ -507,7 +507,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get spotube_description =>
-      'Spotube, un cliente ligero, multiplataforma y gratuito de Spotify';
+      'Matubefy, un cliente ligero, multiplataforma y gratuito de Spotify';
 
   @override
   String get version => 'Versión';
@@ -732,7 +732,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get download_ip_ban_warning =>
-      'Por cierto, tu IP puede ser bloqueada en YouTube debido a solicitudes de descarga excesivas. El bloqueo de IP significa que no podrás usar YouTube (incluso si has iniciado sesión) durante al menos 2-3 meses desde esa dirección IP. Y Spotube no se hace responsable si esto ocurre alguna vez';
+      'Por cierto, tu IP puede ser bloqueada en YouTube debido a solicitudes de descarga excesivas. El bloqueo de IP significa que no podrás usar YouTube (incluso si has iniciado sesión) durante al menos 2-3 meses desde esa dirección IP. Y Matubefy no se hace responsable si esto ocurre alguna vez';
 
   @override
   String get by_clicking_accept_terms =>
@@ -747,7 +747,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get download_agreement_3 =>
-      'Soy completamente consciente de que mi IP puede ser bloqueada en YouTube y no responsabilizo a Spotube ni a sus dueños/contribuyentes por cualquier incidente causado por mi acción actual';
+      'Soy completamente consciente de que mi IP puede ser bloqueada en YouTube y no responsabilizo a Matubefy ni a sus dueños/contribuyentes por cualquier incidente causado por mi acción actual';
 
   @override
   String get decline => 'Rechazar';
@@ -829,7 +829,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get encryption_failed_warning =>
-      'Spotube utiliza el cifrado para almacenar sus datos de forma segura. Pero ha fallado. Por lo tanto, volverá a un almacenamiento no seguro\nSi está utilizando Linux, asegúrese de tener instalados servicios secretos como gnome-keyring, kde-wallet y keepassxc';
+      'Matubefy utiliza el cifrado para almacenar sus datos de forma segura. Pero ha fallado. Por lo tanto, volverá a un almacenamiento no seguro\nSi está utilizando Linux, asegúrese de tener instalados servicios secretos como gnome-keyring, kde-wallet y keepassxc';
 
   @override
   String get querying_info => 'Consultando información...';
@@ -1011,7 +1011,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get choose_your_region_description =>
-      'Esto ayudará a Spotube a mostrarte el contenido adecuado\npara tu ubicación.';
+      'Esto ayudará a Matubefy a mostrarte el contenido adecuado\npara tu ubicación.';
 
   @override
   String get choose_your_language => 'Elige tu idioma';
@@ -1021,7 +1021,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get help_project_grow_description =>
-      'Spotube es un proyecto de código abierto. Puedes ayudar a que este proyecto crezca contribuyendo al proyecto, informando errores o sugiriendo nuevas funciones.';
+      'Matubefy es un proyecto de código abierto. Puedes ayudar a que este proyecto crezca contribuyendo al proyecto, informando errores o sugiriendo nuevas funciones.';
 
   @override
   String get contribute_on_github => 'Contribuir en GitHub';
@@ -1037,7 +1037,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get enable_connect_description =>
-      'Controla Spotube desde otros dispositivos';
+      'Controla Matubefy desde otros dispositivos';
 
   @override
   String get devices => 'Dispositivos';

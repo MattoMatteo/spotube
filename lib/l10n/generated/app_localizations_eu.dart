@@ -491,13 +491,13 @@ class AppLocalizationsEu extends AppLocalizations {
   String get about => 'Honi buruz';
 
   @override
-  String get u_love_spotube => 'Badakigu Spotube maite duzula';
+  String get u_love_spotube => 'Badakigu Matubefy maite duzula';
 
   @override
   String get check_for_updates => 'Bilatu eguneraketak';
 
   @override
-  String get about_spotube => 'Spotube-ri buruz';
+  String get about_spotube => 'Matubefy-ri buruz';
 
   @override
   String get blacklist => 'Zerrenda beltza';
@@ -507,7 +507,7 @@ class AppLocalizationsEu extends AppLocalizations {
 
   @override
   String get spotube_description =>
-      'Spotube, arina, plataforma-anitza eta doakoa den Spotify-ren bezeroa';
+      'Matubefy, arina, plataforma-anitza eta doakoa den Spotify-ren bezeroa';
 
   @override
   String get version => 'Bertsioa';
@@ -731,7 +731,7 @@ class AppLocalizationsEu extends AppLocalizations {
 
   @override
   String get download_ip_ban_warning =>
-      'Bidenabar, baliteke zure IPa YouTuben blokeatzea deskarga eskera gehiegi egiten badituzu. IPa blokeatzeak esan nahi du ezin izango duzula YouTube erabili (nahiz eta saioa hasia izan) gutxienez 2-3 hilabetez IP helbide horretatik. Eta Spotube ez da erantzule izango hori gertatzen bazaizu';
+      'Bidenabar, baliteke zure IPa YouTuben blokeatzea deskarga eskera gehiegi egiten badituzu. IPa blokeatzeak esan nahi du ezin izango duzula YouTube erabili (nahiz eta saioa hasia izan) gutxienez 2-3 hilabetez IP helbide horretatik. Eta Matubefy ez da erantzule izango hori gertatzen bazaizu';
 
   @override
   String get by_clicking_accept_terms =>
@@ -747,7 +747,7 @@ class AppLocalizationsEu extends AppLocalizations {
 
   @override
   String get download_agreement_3 =>
-      'Erabat jakitun naiz YouTubek nire IPa blokea dezakeela eta ez diot Spotube-ri edo bere jabe/laguntzaileei erantzukizunik eskatuko nire oraingo jokaerak ekar ditzakeen arazoengatik';
+      'Erabat jakitun naiz YouTubek nire IPa blokea dezakeela eta ez diot Matubefy-ri edo bere jabe/laguntzaileei erantzukizunik eskatuko nire oraingo jokaerak ekar ditzakeen arazoengatik';
 
   @override
   String get decline => 'Baztertu';
@@ -829,7 +829,7 @@ class AppLocalizationsEu extends AppLocalizations {
 
   @override
   String get encryption_failed_warning =>
-      'Spotube-ek zifratzea darabil datuak modu seguruan biltegiratzeko. Baina huts egin du. Hori dela eta, biltegiratzea ez da segurua izango\nLinux erabiltzen ari bazara, ziurtatu edozein sekretu-zerbitzu (gnome-keyring, kde-wallet, keepassxc etab.) instalatuta duzula';
+      'Matubefy-ek zifratzea darabil datuak modu seguruan biltegiratzeko. Baina huts egin du. Hori dela eta, biltegiratzea ez da segurua izango\nLinux erabiltzen ari bazara, ziurtatu edozein sekretu-zerbitzu (gnome-keyring, kde-wallet, keepassxc etab.) instalatuta duzula';
 
   @override
   String get querying_info => 'Informazioa egiaztatzen...';
@@ -1009,7 +1009,7 @@ class AppLocalizationsEu extends AppLocalizations {
 
   @override
   String get choose_your_region_description =>
-      'Honekin Spotube-k zure kokalerakuari dagokion edukia\neskeiniko dizu.';
+      'Honekin Matubefy-k zure kokalerakuari dagokion edukia\neskeiniko dizu.';
 
   @override
   String get choose_your_language => 'Aukeratu zure hizkuntza';
@@ -1019,7 +1019,7 @@ class AppLocalizationsEu extends AppLocalizations {
 
   @override
   String get help_project_grow_description =>
-      'Spotube kode irekiko proiektu bat da. Proiektu hau hazten lagundu dezakezu, erroreak jakinaraziz edo ezaugarri berriak proposatuz.';
+      'Matubefy kode irekiko proiektu bat da. Proiektu hau hazten lagundu dezakezu, erroreak jakinaraziz edo ezaugarri berriak proposatuz.';
 
   @override
   String get contribute_on_github => 'GitHub-en lagundu';
@@ -1035,7 +1035,7 @@ class AppLocalizationsEu extends AppLocalizations {
 
   @override
   String get enable_connect_description =>
-      'Kontrolatu Spotube beste gailu batzuetatik';
+      'Kontrolatu Matubefy beste gailu batzuetatik';
 
   @override
   String get devices => 'Gailuak';

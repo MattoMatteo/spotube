@@ -32,7 +32,7 @@ Future<ArgResults> startCLI(List<String> args) async {
 
   if (arguments["version"] == true) {
     final package = await PackageInfo.fromPlatform();
-    print("Spotube v${package.version}");
+    print("Matubefy v${package.version} (based on Spotube)");
     exit(0);
   }
 

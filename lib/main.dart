@@ -114,7 +114,7 @@ Future<void> main(List<String> rawArgs) async {
     final database = AppDatabase();
 
     if (kIsDesktop) {
-      await localNotifier.setup(appName: "Spotube");
+      await localNotifier.setup(appName: "Matubefy");
       await WindowManagerTools.initialize();
     }
 
@@ -191,7 +191,7 @@ class Spotube extends HookConsumerWidget {
       ],
       routerConfig: router.config(),
       debugShowCheckedModeBanner: false,
-      title: 'Spotube',
+      title: 'Matubefy',
       builder: (context, child) {
         child = ScrollConfiguration(
           behavior: ScrollConfiguration.of(context).copyWith(

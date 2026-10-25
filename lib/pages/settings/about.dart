@@ -100,11 +100,12 @@ class AboutSpotubePage extends HookConsumerWidget {
                           ),
                           const TableRow(
                             cells: [
-                              TableCell(child: Text("Website")),
+                              // Matubefy is a fork: credit the original app
+                              TableCell(child: Text("Based on")),
                               colon,
                               TableCell(
                                 child: Hyperlink(
-                                  "spotube.krtirtho.dev",
+                                  "Spotube (spotube.krtirtho.dev)",
                                   "https://spotube.krtirtho.dev",
                                 ),
                               ),
@@ -116,8 +117,8 @@ class AboutSpotubePage extends HookConsumerWidget {
                               colon,
                               const TableCell(
                                 child: Hyperlink(
-                                  "github.com/KRTirtho/spotube",
-                                  "https://github.com/KRTirtho/spotube",
+                                  "github.com/MattoMatteo/spotube",
+                                  "https://github.com/MattoMatteo/spotube",
                                 ),
                               ),
                             ],
@@ -129,7 +130,7 @@ class AboutSpotubePage extends HookConsumerWidget {
                               const TableCell(
                                 child: Hyperlink(
                                   "BSD-4-Clause",
-                                  "https://raw.githubusercontent.com/KRTirtho/spotube/master/LICENSE",
+                                  "https://github.com/MattoMatteo/spotube/blob/patched-5.1.2/LICENSE",
                                 ),
                               ),
                             ],
@@ -139,9 +140,10 @@ class AboutSpotubePage extends HookConsumerWidget {
                               TableCell(child: Text(context.l10n.bug_issues)),
                               colon,
                               const TableCell(
+                                // This fork's issues, not the original app's
                                 child: Hyperlink(
-                                  "Discord#chat",
-                                  "https://discord.gg/uJ94vxB6vg",
+                                  "github.com/MattoMatteo/spotube/issues",
+                                  "https://github.com/MattoMatteo/spotube/issues",
                                 ),
                               ),
                             ],

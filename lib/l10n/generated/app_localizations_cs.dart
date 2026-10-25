@@ -487,13 +487,13 @@ class AppLocalizationsCs extends AppLocalizations {
   String get about => 'O aplikaci';
 
   @override
-  String get u_love_spotube => 'Víme, že milujete Spotube';
+  String get u_love_spotube => 'Víme, že milujete Matubefy';
 
   @override
   String get check_for_updates => 'Zkontrolovat aktualizace';
 
   @override
-  String get about_spotube => 'O Spotube';
+  String get about_spotube => 'O Matubefy';
 
   @override
   String get blacklist => 'Černá listina';
@@ -503,7 +503,7 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get spotube_description =>
-      'Spotube, rychlý, multiplatformní, bezplatný Spotify klient';
+      'Matubefy, rychlý, multiplatformní, bezplatný Spotify klient';
 
   @override
   String get version => 'Verze';
@@ -725,7 +725,7 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get download_ip_ban_warning =>
-      'Mimochodem, vaše IP může být na YouTube zablokována kvůli nadměrným požadavkům na stahování. Blokování IP znamená, že nemůžete používat YouTube (i když jste přihlášeni) alespoň 2-3 měsíce ze zařízení s touto IP. A Spotube nenese žádnou odpovědnost, pokud se to někdy stane';
+      'Mimochodem, vaše IP může být na YouTube zablokována kvůli nadměrným požadavkům na stahování. Blokování IP znamená, že nemůžete používat YouTube (i když jste přihlášeni) alespoň 2-3 měsíce ze zařízení s touto IP. A Matubefy nenese žádnou odpovědnost, pokud se to někdy stane';
 
   @override
   String get by_clicking_accept_terms =>
@@ -822,7 +822,7 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get encryption_failed_warning =>
-      'Spotube používá šifrování k bezpečnému ukládání vašich dat. Ale selhalo. Takže se vrátí k nezabezpečenému úložišti\nPokud používáte linux, ujistěte se, že máte nainstalovanou jakoukoli službu k ukládání bezpečnostních pověření (gnome-keyring, kde-wallet, keepassxc atd.)';
+      'Matubefy používá šifrování k bezpečnému ukládání vašich dat. Ale selhalo. Takže se vrátí k nezabezpečenému úložišti\nPokud používáte linux, ujistěte se, že máte nainstalovanou jakoukoli službu k ukládání bezpečnostních pověření (gnome-keyring, kde-wallet, keepassxc atd.)';
 
   @override
   String get querying_info => 'Získávání informací...';
@@ -1002,7 +1002,7 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get choose_your_region_description =>
-      'To pomůže Spotube ukázat vám správný obsah\npro vaši lokalitu.';
+      'To pomůže Matubefy ukázat vám správný obsah\npro vaši lokalitu.';
 
   @override
   String get choose_your_language => 'Vyberte svůj jazyk';
@@ -1012,7 +1012,7 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get help_project_grow_description =>
-      'Spotube je open-source projekt. Můžete pomoci tomuto projektu růst tím, že přispějete do projektu, nahlásíte chyby nebo navrhnete nové funkce.';
+      'Matubefy je open-source projekt. Můžete pomoci tomuto projektu růst tím, že přispějete do projektu, nahlásíte chyby nebo navrhnete nové funkce.';
 
   @override
   String get contribute_on_github => 'Přispějte na GitHub';
@@ -1028,7 +1028,7 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get enable_connect_description =>
-      'Ovládejte Spotube z jiného zařízení';
+      'Ovládejte Matubefy z jiného zařízení';
 
   @override
   String get devices => 'Zařízení';

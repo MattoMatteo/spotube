@@ -1044,7 +1044,7 @@ abstract class AppLocalizations {
   /// No description provided for @u_love_spotube.
   ///
   /// In en, this message translates to:
-  /// **'We know you love Spotube'**
+  /// **'We know you love Matubefy'**
   String get u_love_spotube;
 
   /// No description provided for @check_for_updates.
@@ -1056,7 +1056,7 @@ abstract class AppLocalizations {
   /// No description provided for @about_spotube.
   ///
   /// In en, this message translates to:
-  /// **'About Spotube'**
+  /// **'About Matubefy'**
   String get about_spotube;
 
   /// No description provided for @blacklist.
@@ -1482,7 +1482,7 @@ abstract class AppLocalizations {
   /// No description provided for @download_ip_ban_warning.
   ///
   /// In en, this message translates to:
-  /// **'BTW, your IP can get blocked on YouTube due excessive download requests than usual. IP block means you can\'t use YouTube (even if you\'re logged in) for at least 2-3 months from that IP device. And Spotube doesn\'t hold any responsibility if this ever happens'**
+  /// **'BTW, your IP can get blocked on YouTube due excessive download requests than usual. IP block means you can\'t use YouTube (even if you\'re logged in) for at least 2-3 months from that IP device. And Matubefy doesn\'t hold any responsibility if this ever happens'**
   String get download_ip_ban_warning;
 
   /// No description provided for @by_clicking_accept_terms.
@@ -1506,7 +1506,7 @@ abstract class AppLocalizations {
   /// No description provided for @download_agreement_3.
   ///
   /// In en, this message translates to:
-  /// **'I\'m completely aware that my IP can get blocked on YouTube & I don\'t hold Spotube or his owners/contributors responsible for any accidents caused by my current action'**
+  /// **'I\'m completely aware that my IP can get blocked on YouTube & I don\'t hold Matubefy or his owners/contributors responsible for any accidents caused by my current action'**
   String get download_agreement_3;
 
   /// No description provided for @decline.
@@ -1656,7 +1656,7 @@ abstract class AppLocalizations {
   /// No description provided for @encryption_failed_warning.
   ///
   /// In en, this message translates to:
-  /// **'Spotube uses encryption to securely store your data. But failed to do so. So it\'ll fallback to insecure storage\nIf you\'re using linux, please make sure you\'ve any secret-service (gnome-keyring, kde-wallet, keepassxc etc) installed'**
+  /// **'Matubefy uses encryption to securely store your data. But failed to do so. So it\'ll fallback to insecure storage\nIf you\'re using linux, please make sure you\'ve any secret-service (gnome-keyring, kde-wallet, keepassxc etc) installed'**
   String get encryption_failed_warning;
 
   /// No description provided for @querying_info.
@@ -1992,7 +1992,7 @@ abstract class AppLocalizations {
   /// No description provided for @choose_your_region_description.
   ///
   /// In en, this message translates to:
-  /// **'This will help Spotube show you the right content\nfor your location.'**
+  /// **'This will help Matubefy show you the right content\nfor your location.'**
   String get choose_your_region_description;
 
   /// No description provided for @choose_your_language.
@@ -2010,7 +2010,7 @@ abstract class AppLocalizations {
   /// No description provided for @help_project_grow_description.
   ///
   /// In en, this message translates to:
-  /// **'Spotube is an open-source project. You can help this project grow by contributing to the project, reporting bugs, or suggesting new features.'**
+  /// **'Matubefy is an open-source project. You can help this project grow by contributing to the project, reporting bugs, or suggesting new features.'**
   String get help_project_grow_description;
 
   /// No description provided for @contribute_on_github.
@@ -2040,7 +2040,7 @@ abstract class AppLocalizations {
   /// No description provided for @enable_connect_description.
   ///
   /// In en, this message translates to:
-  /// **'Control Spotube from other devices'**
+  /// **'Control Matubefy from other devices'**
   String get enable_connect_description;
 
   /// No description provided for @devices.

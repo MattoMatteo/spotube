@@ -486,13 +486,13 @@ class AppLocalizationsKo extends AppLocalizations {
   String get about => '앱 정보';
 
   @override
-  String get u_love_spotube => 'Spotube... 사랑하시죠?';
+  String get u_love_spotube => 'Matubefy... 사랑하시죠?';
 
   @override
   String get check_for_updates => '업데이트 확인';
 
   @override
-  String get about_spotube => 'Spotube에 관해';
+  String get about_spotube => 'Matubefy에 관해';
 
   @override
   String get blacklist => '블랙리스트';
@@ -502,7 +502,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get spotube_description =>
-      'Spotube는, 경량에 크로스플랫폼인데다 무료이기까지한 스포티파이 클라이언트입니다';
+      'Matubefy는, 경량에 크로스플랫폼인데다 무료이기까지한 스포티파이 클라이언트입니다';
 
   @override
   String get version => '버전';
@@ -733,7 +733,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get download_agreement_3 =>
-      '본인은 YouTube에서 내 IP가 차단될 수 있음을 완전히 알고 있으며, 현재 내 행동으로 인해 발생하는 사고에 대해 Spotube 또는 그 소유자/기여자에게 책임을 묻지 않습니다.';
+      '본인은 YouTube에서 내 IP가 차단될 수 있음을 완전히 알고 있으며, 현재 내 행동으로 인해 발생하는 사고에 대해 Matubefy 또는 그 소유자/기여자에게 책임을 묻지 않습니다.';
 
   @override
   String get decline => '거절';
@@ -815,7 +815,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get encryption_failed_warning =>
-      'Spotube는 암호화를 사용하여 데이터를 안전하게 저장합니다. 하지만 그렇게 하지 못했습니다. 따라서 안전하지 않은 저장소로 대체됩니다.\n리눅스를 사용하는 경우, 비밀 서비스(gnome-keyring, kde-wallet, keepassxc 등)가 설치되어 있는지 확인하세요.';
+      'Matubefy는 암호화를 사용하여 데이터를 안전하게 저장합니다. 하지만 그렇게 하지 못했습니다. 따라서 안전하지 않은 저장소로 대체됩니다.\n리눅스를 사용하는 경우, 비밀 서비스(gnome-keyring, kde-wallet, keepassxc 등)가 설치되어 있는지 확인하세요.';
 
   @override
   String get querying_info => '정보를 얻는 중...';
@@ -989,7 +989,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get choose_your_region_description =>
-      '이것은 Spotube가 위치에 맞는 콘텐츠를 표시하는 데 도움이 됩니다.';
+      '이것은 Matubefy가 위치에 맞는 콘텐츠를 표시하는 데 도움이 됩니다.';
 
   @override
   String get choose_your_language => '언어 선택';
@@ -999,7 +999,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get help_project_grow_description =>
-      'Spotube는 오픈 소스 프로젝트입니다. 프로젝트에 기여하거나 버그를 보고하거나 새로운 기능을 제안하여이 프로젝트의 성장에 도움을 줄 수 있습니다.';
+      'Matubefy는 오픈 소스 프로젝트입니다. 프로젝트에 기여하거나 버그를 보고하거나 새로운 기능을 제안하여이 프로젝트의 성장에 도움을 줄 수 있습니다.';
 
   @override
   String get contribute_on_github => 'GitHub에서 기여하기';
@@ -1014,7 +1014,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get enable_connect => '연결 활성화';
 
   @override
-  String get enable_connect_description => '다른 장치에서 Spotube 제어';
+  String get enable_connect_description => '다른 장치에서 Matubefy 제어';
 
   @override
   String get devices => '장치';

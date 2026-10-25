@@ -492,13 +492,13 @@ class AppLocalizationsTl extends AppLocalizations {
   String get about => 'Tungkol sa';
 
   @override
-  String get u_love_spotube => 'Alam naming gusto mo ang Spotube';
+  String get u_love_spotube => 'Alam naming gusto mo ang Matubefy';
 
   @override
   String get check_for_updates => 'Maghanap ng mga update';
 
   @override
-  String get about_spotube => 'Tungkol sa Spotube';
+  String get about_spotube => 'Tungkol sa Matubefy';
 
   @override
   String get blacklist => 'Blacklist';
@@ -508,7 +508,7 @@ class AppLocalizationsTl extends AppLocalizations {
 
   @override
   String get spotube_description =>
-      'Spotube, isang magaan, cross-platform, libreng-para-sa-lahat na spotify client';
+      'Matubefy, isang magaan, cross-platform, libreng-para-sa-lahat na spotify client';
 
   @override
   String get version => 'Bersyon';
@@ -732,7 +732,7 @@ class AppLocalizationsTl extends AppLocalizations {
 
   @override
   String get download_ip_ban_warning =>
-      'Sa nga pala, ang iyong IP ay maaaring ma-block sa YouTube dahil sa sobrang mga kahilingan sa pag-download kaysa sa karaniwan. Ang IP block ay nangangahulugang hindi mo magagamit ang YouTube (kahit na naka-log in ka) sa loob ng hindi bababa sa 2-3 buwan mula sa device na may IP na iyon. At hindi pinanghahawakan ng Spotube ang anumang responsibilidad kung mangyayari ito';
+      'Sa nga pala, ang iyong IP ay maaaring ma-block sa YouTube dahil sa sobrang mga kahilingan sa pag-download kaysa sa karaniwan. Ang IP block ay nangangahulugang hindi mo magagamit ang YouTube (kahit na naka-log in ka) sa loob ng hindi bababa sa 2-3 buwan mula sa device na may IP na iyon. At hindi pinanghahawakan ng Matubefy ang anumang responsibilidad kung mangyayari ito';
 
   @override
   String get by_clicking_accept_terms =>
@@ -748,7 +748,7 @@ class AppLocalizationsTl extends AppLocalizations {
 
   @override
   String get download_agreement_3 =>
-      'Lubos kong nauunawaan na ang aking IP ay maaaring ma-block sa YouTube at hindi ko pinanghahawakan ang Spotube o ang kanyang mga may-ari/nag-ambag na responsable para sa anumang aksidente na sanhi ng aking kasalukuyang aksyon';
+      'Lubos kong nauunawaan na ang aking IP ay maaaring ma-block sa YouTube at hindi ko pinanghahawakan ang Matubefy o ang kanyang mga may-ari/nag-ambag na responsable para sa anumang aksidente na sanhi ng aking kasalukuyang aksyon';
 
   @override
   String get decline => 'Tanggihan';
@@ -830,7 +830,7 @@ class AppLocalizationsTl extends AppLocalizations {
 
   @override
   String get encryption_failed_warning =>
-      'Gumagamit ng encryption ang Spotube para ligtas na i-store ang iyong data. Ngunit nabigo. Kaya babalik ito sa hindi secure na storage\nKung gumagamit ka ng linux, mangyaring tiyakin na mayroon kang anumang secret-service na naka-install (gnome-keyring, kde-wallet, keepassxc atbp)';
+      'Gumagamit ng encryption ang Matubefy para ligtas na i-store ang iyong data. Ngunit nabigo. Kaya babalik ito sa hindi secure na storage\nKung gumagamit ka ng linux, mangyaring tiyakin na mayroon kang anumang secret-service na naka-install (gnome-keyring, kde-wallet, keepassxc atbp)';
 
   @override
   String get querying_info => 'Kinukuha ang impormasyon...';
@@ -1013,7 +1013,7 @@ class AppLocalizationsTl extends AppLocalizations {
 
   @override
   String get choose_your_region_description =>
-      'Ito ay tutulong sa Spotube na ipakita sa iyo ang tamang content\npara sa iyong lokasyon.';
+      'Ito ay tutulong sa Matubefy na ipakita sa iyo ang tamang content\npara sa iyong lokasyon.';
 
   @override
   String get choose_your_language => 'Piliin ang iyong wika';
@@ -1023,7 +1023,7 @@ class AppLocalizationsTl extends AppLocalizations {
 
   @override
   String get help_project_grow_description =>
-      'Ang Spotube ay isang open-source na proyekto. Maaari mong tulungan ang proyektong ito na lumago sa pamamagitan ng pag-contribute sa proyekto, pag-ulat ng mga bug, o pagmungkahi ng mga bagong feature.';
+      'Ang Matubefy ay isang open-source na proyekto. Maaari mong tulungan ang proyektong ito na lumago sa pamamagitan ng pag-contribute sa proyekto, pag-ulat ng mga bug, o pagmungkahi ng mga bagong feature.';
 
   @override
   String get contribute_on_github => 'Mag-contribute sa GitHub';
@@ -1039,7 +1039,7 @@ class AppLocalizationsTl extends AppLocalizations {
 
   @override
   String get enable_connect_description =>
-      'Kontrolin ang Spotube mula sa ibang mga device';
+      'Kontrolin ang Matubefy mula sa ibang mga device';
 
   @override
   String get devices => 'Mga Device';

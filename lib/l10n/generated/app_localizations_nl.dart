@@ -489,13 +489,13 @@ class AppLocalizationsNl extends AppLocalizations {
   String get about => 'Over';
 
   @override
-  String get u_love_spotube => 'We weten dat je van Spotube houd';
+  String get u_love_spotube => 'We weten dat je van Matubefy houd';
 
   @override
   String get check_for_updates => 'Controleren op updates';
 
   @override
-  String get about_spotube => 'Over Spotube';
+  String get about_spotube => 'Over Matubefy';
 
   @override
   String get blacklist => 'Zwarte lijst';
@@ -505,7 +505,7 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get spotube_description =>
-      'Spotube, een lichtgewicht, cross-platform, vrij-voor-alles Spotify-client';
+      'Matubefy, een lichtgewicht, cross-platform, vrij-voor-alles Spotify-client';
 
   @override
   String get version => 'Versie';
@@ -727,7 +727,7 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get download_ip_ban_warning =>
-      'BTW, je IP-adres kan worden geblokkeerd op YouTube als gevolg van buitensporige downloadverzoeken. IP-blokkering betekent dat je YouTube niet kunt gebruiken (zelfs als je ingelogd bent) voor tenminste 2-3 maanden vanaf dat IP-apparaat. Spotube is niet verantwoordelijk als dit ooit gebeurt.';
+      'BTW, je IP-adres kan worden geblokkeerd op YouTube als gevolg van buitensporige downloadverzoeken. IP-blokkering betekent dat je YouTube niet kunt gebruiken (zelfs als je ingelogd bent) voor tenminste 2-3 maanden vanaf dat IP-apparaat. Matubefy is niet verantwoordelijk als dit ooit gebeurt.';
 
   @override
   String get by_clicking_accept_terms =>
@@ -743,7 +743,7 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get download_agreement_3 =>
-      'Ik ben me er volledig van bewust dat mijn IP geblokkeerd kan worden op YouTube & ik houd Spotube of zijn eigenaars/contributeurs niet verantwoordelijk voor ongelukken die veroorzaakt worden door mijn huidige actie.';
+      'Ik ben me er volledig van bewust dat mijn IP geblokkeerd kan worden op YouTube & ik houd Matubefy of zijn eigenaars/contributeurs niet verantwoordelijk voor ongelukken die veroorzaakt worden door mijn huidige actie.';
 
   @override
   String get decline => 'Weigeren';
@@ -825,7 +825,7 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get encryption_failed_warning =>
-      'Spotube gebruikt versleuteling om je gegevens veilig op te slaan. Maar dat is niet gelukt. Dus zal het terugvallen op onveilige opslag.\nAls je linux gebruikt, zorg er dan voor dat je een geheim-dienst (gnome-keyring, kde-wallet, keepassxc etc) hebt geïnstalleerd.';
+      'Matubefy gebruikt versleuteling om je gegevens veilig op te slaan. Maar dat is niet gelukt. Dus zal het terugvallen op onveilige opslag.\nAls je linux gebruikt, zorg er dan voor dat je een geheim-dienst (gnome-keyring, kde-wallet, keepassxc etc) hebt geïnstalleerd.';
 
   @override
   String get querying_info => 'Info opvragen…';
@@ -1005,7 +1005,7 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get choose_your_region_description =>
-      'Dit helpt Spotube om de juiste inhoud\nvoor jouw locatie te tonen.';
+      'Dit helpt Matubefy om de juiste inhoud\nvoor jouw locatie te tonen.';
 
   @override
   String get choose_your_language => 'Kies je taal';
@@ -1015,7 +1015,7 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get help_project_grow_description =>
-      'Spotube is een open-source project. Je kunt dit project helpen groeien door eraan bij te dragen, problemen te melden of nieuwe functies voor te stellen.';
+      'Matubefy is een open-source project. Je kunt dit project helpen groeien door eraan bij te dragen, problemen te melden of nieuwe functies voor te stellen.';
 
   @override
   String get contribute_on_github => 'Bijdragen on GitHub';
@@ -1031,7 +1031,7 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get enable_connect_description =>
-      'Spotube bedienen vanaf andere apparaten';
+      'Matubefy bedienen vanaf andere apparaten';
 
   @override
   String get devices => 'Apparaten';

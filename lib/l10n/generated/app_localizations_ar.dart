@@ -490,13 +490,13 @@ class AppLocalizationsAr extends AppLocalizations {
   String get about => 'حول';
 
   @override
-  String get u_love_spotube => 'نحن نعلم أنك تحب Spotube';
+  String get u_love_spotube => 'نحن نعلم أنك تحب Matubefy';
 
   @override
   String get check_for_updates => 'تحقق من وجود تحديثات';
 
   @override
-  String get about_spotube => 'حول Spotube';
+  String get about_spotube => 'حول Matubefy';
 
   @override
   String get blacklist => 'قائمة سوداء';
@@ -506,7 +506,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get spotube_description =>
-      'Spotube، عميل Spotify خفيف الوزن ومتعدد المنصات ومجاني للجميع';
+      'Matubefy، عميل Spotify خفيف الوزن ومتعدد المنصات ومجاني للجميع';
 
   @override
   String get version => 'إصدار';
@@ -730,7 +730,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get download_ip_ban_warning =>
-      'بالمناسبة، يمكن أن يتم حظر عنوان IP الخاص بك على YouTube بسبب طلبات التنزيل الزائدة عن المعتاد. يعني حظر IP أنه لا يمكنك استخدام YouTube (حتى إذا قمت بتسجيل الدخول) لمدة تتراوح بين شهرين إلى ثلاثة أشهر على الأقل من جهاز IP هذا. ولا يتحمل Spotube أي مسؤولية إذا حدث هذا على الإطلاق';
+      'بالمناسبة، يمكن أن يتم حظر عنوان IP الخاص بك على YouTube بسبب طلبات التنزيل الزائدة عن المعتاد. يعني حظر IP أنه لا يمكنك استخدام YouTube (حتى إذا قمت بتسجيل الدخول) لمدة تتراوح بين شهرين إلى ثلاثة أشهر على الأقل من جهاز IP هذا. ولا يتحمل Matubefy أي مسؤولية إذا حدث هذا على الإطلاق';
 
   @override
   String get by_clicking_accept_terms =>
@@ -745,7 +745,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get download_agreement_3 =>
-      'أدرك تمامًا أنه يمكن حظر عنوان IP الخاص بي على YouTube ولا أحمل Spotube أو مالكيه/مساهميه المسؤولية عن أي حوادث ناجمة عن الإجراء الحالي الخاص بي';
+      'أدرك تمامًا أنه يمكن حظر عنوان IP الخاص بي على YouTube ولا أحمل Matubefy أو مالكيه/مساهميه المسؤولية عن أي حوادث ناجمة عن الإجراء الحالي الخاص بي';
 
   @override
   String get decline => 'رفض';
@@ -827,7 +827,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get encryption_failed_warning =>
-      'يستخدم Spotube التشفير لتخزين بياناتك بشكل آمن. لكنها فشلت في القيام بذلك. لذلك سيعود الأمر إلى التخزين غير الآمن\nإذا كنت تستخدم Linux، فيرجى التأكد من تثبيت أي خدمة سرية (gnome-keyring، kde-wallet، keepassxc، إلخ)';
+      'يستخدم Matubefy التشفير لتخزين بياناتك بشكل آمن. لكنها فشلت في القيام بذلك. لذلك سيعود الأمر إلى التخزين غير الآمن\nإذا كنت تستخدم Linux، فيرجى التأكد من تثبيت أي خدمة سرية (gnome-keyring، kde-wallet، keepassxc، إلخ)';
 
   @override
   String get querying_info => 'جارٍ الاستعلام عن معلومات...';
@@ -1016,7 +1016,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get help_project_grow_description =>
-      'Spotube هو مشروع مفتوح المصدر. يمكنك مساعدة هذا المشروع في النمو عن طريق المساهمة في المشروع، أو الإبلاغ عن الأخطاء، أو اقتراح ميزات جديدة.';
+      'Matubefy هو مشروع مفتوح المصدر. يمكنك مساعدة هذا المشروع في النمو عن طريق المساهمة في المشروع، أو الإبلاغ عن الأخطاء، أو اقتراح ميزات جديدة.';
 
   @override
   String get contribute_on_github => 'المساهمة على GitHub';
@@ -1032,7 +1032,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get enable_connect_description =>
-      'التحكم في Spotube من الأجهزة الأخرى';
+      'التحكم في Matubefy من الأجهزة الأخرى';
 
   @override
   String get devices => 'الأجهزة';

@@ -489,13 +489,13 @@ class AppLocalizationsFa extends AppLocalizations {
   String get about => 'درباره';
 
   @override
-  String get u_love_spotube => 'دوست داریدSpotubeما میدانیم شما ';
+  String get u_love_spotube => 'دوست داریدMatubefyما میدانیم شما ';
 
   @override
   String get check_for_updates => 'بروزرسانی را بررسی کنید';
 
   @override
-  String get about_spotube => 'Spotube درباره';
+  String get about_spotube => 'Matubefy درباره';
 
   @override
   String get blacklist => 'لیست سیاه';
@@ -505,7 +505,7 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get spotube_description =>
-      'یک برنامه سبک و مولتی پلتفرم و رایگان برای همه استSpotube';
+      'یک برنامه سبک و مولتی پلتفرم و رایگان برای همه استMatubefy';
 
   @override
   String get version => 'نسخه';
@@ -726,7 +726,7 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get download_ip_ban_warning =>
-      'راستی آی پی شما می تواند در یوتوب به دلیل درخواست های دانلود بیش از حد معمول مسدود شود. بلوک آی پی به این معنی است که شما نمی توانید از یوتوب (حتی اگر وارد سیستم شده باشید) حداقل 2-3 ماه از آن دستگاه آی پی استفاده کنید. و Spotube هیچ مسئولیتی در صورت وقوع این اتفاق ندارد';
+      'راستی آی پی شما می تواند در یوتوب به دلیل درخواست های دانلود بیش از حد معمول مسدود شود. بلوک آی پی به این معنی است که شما نمی توانید از یوتوب (حتی اگر وارد سیستم شده باشید) حداقل 2-3 ماه از آن دستگاه آی پی استفاده کنید. و Matubefy هیچ مسئولیتی در صورت وقوع این اتفاق ندارد';
 
   @override
   String get by_clicking_accept_terms =>
@@ -823,7 +823,7 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get encryption_failed_warning =>
-      'Spotube از رمزگذاری برای ذخیره ایمن داده های شما استفاده می کند. اما موفق به انجام این کار نشد. بنابراین به فضای ذخیره‌سازی ناامن تبدیل می‌شود\nاگر از لینوکس استفاده می‌کنید، لطفاً مطمئن شوید که سرویس مخفی (gnome-keyring، kde-wallet، keepassxc و غیره) را نصب کرده‌اید.';
+      'Matubefy از رمزگذاری برای ذخیره ایمن داده های شما استفاده می کند. اما موفق به انجام این کار نشد. بنابراین به فضای ذخیره‌سازی ناامن تبدیل می‌شود\nاگر از لینوکس استفاده می‌کنید، لطفاً مطمئن شوید که سرویس مخفی (gnome-keyring، kde-wallet، keepassxc و غیره) را نصب کرده‌اید.';
 
   @override
   String get querying_info => 'جستجو درباره ';
@@ -1002,7 +1002,7 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get choose_your_region_description =>
-      'این به Spotube کمک می‌کند تا محتوای مناسبی را برای موقعیت شما نشان دهد.';
+      'این به Matubefy کمک می‌کند تا محتوای مناسبی را برای موقعیت شما نشان دهد.';
 
   @override
   String get choose_your_language => 'زبان خود را انتخاب کنید';
@@ -1012,7 +1012,7 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get help_project_grow_description =>
-      'Spotube یک پروژه متن باز است. شما می‌توانید با به پروژه کمک کردن، گزارش دادن اشکالات یا پیشنهاد ویژگی‌های جدید، به این پروژه کمک کنید.';
+      'Matubefy یک پروژه متن باز است. شما می‌توانید با به پروژه کمک کردن، گزارش دادن اشکالات یا پیشنهاد ویژگی‌های جدید، به این پروژه کمک کنید.';
 
   @override
   String get contribute_on_github => 'مشارکت در GitHub';
@@ -1027,7 +1027,7 @@ class AppLocalizationsFa extends AppLocalizations {
   String get enable_connect => 'فعال‌سازی اتصال';
 
   @override
-  String get enable_connect_description => 'کنترل Spotube از دیگر دستگاه‌ها';
+  String get enable_connect_description => 'کنترل Matubefy از دیگر دستگاه‌ها';
 
   @override
   String get devices => 'دستگاه‌ها';

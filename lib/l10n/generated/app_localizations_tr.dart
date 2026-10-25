@@ -492,13 +492,13 @@ class AppLocalizationsTr extends AppLocalizations {
   String get about => 'Hakkında';
 
   @override
-  String get u_love_spotube => 'Spotube\'u sevdiğinizi biliyoruz';
+  String get u_love_spotube => 'Matubefy\'u sevdiğinizi biliyoruz';
 
   @override
   String get check_for_updates => 'Güncellemeleri kontrol et';
 
   @override
-  String get about_spotube => 'Spotube hakkında';
+  String get about_spotube => 'Matubefy hakkında';
 
   @override
   String get blacklist => 'Kara liste';
@@ -508,7 +508,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get spotube_description =>
-      'Spotube, hafif, platformlar arası uyumlu ve herkes için ücretsiz bir Spotify istemcisidir.';
+      'Matubefy, hafif, platformlar arası uyumlu ve herkes için ücretsiz bir Spotify istemcisidir.';
 
   @override
   String get version => 'Sürüm';
@@ -730,7 +730,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get download_ip_ban_warning =>
-      'Ayrıca, normalden fazla indirme istekleri nedeniyle YouTube\'da IP\'niz engellenebilir. IP engeli, en az 2-3 ay boyunca YouTube\'u (hatta oturum açmış olsanız bile) o IP cihazından kullanamayacağınız anlamına gelir. Ve eğer böyle bir durum yaşanırsa, Spotube bundan hiçbir sorumluluk kabul etmez.';
+      'Ayrıca, normalden fazla indirme istekleri nedeniyle YouTube\'da IP\'niz engellenebilir. IP engeli, en az 2-3 ay boyunca YouTube\'u (hatta oturum açmış olsanız bile) o IP cihazından kullanamayacağınız anlamına gelir. Ve eğer böyle bir durum yaşanırsa, Matubefy bundan hiçbir sorumluluk kabul etmez.';
 
   @override
   String get by_clicking_accept_terms =>
@@ -746,7 +746,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get download_agreement_3 =>
-      'YouTube\'da IP\'min engellenebileceğinin tamamen farkındayım ve mevcut eylemlerimden kaynaklanan herhangi bir kaza için Spotube\'u veya sahiplerini/katkıda bulunanları sorumlu tutmuyorum.';
+      'YouTube\'da IP\'min engellenebileceğinin tamamen farkındayım ve mevcut eylemlerimden kaynaklanan herhangi bir kaza için Matubefy\'u veya sahiplerini/katkıda bulunanları sorumlu tutmuyorum.';
 
   @override
   String get decline => 'Reddet';
@@ -828,7 +828,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get encryption_failed_warning =>
-      'Spotube, verilerinizi güvenli bir şekilde depolamak için şifreleme kullanır. Ancak bunu başaramadı. Bu nedenle, güvensiz depolamaya geri dönecektir\nLinux kullanıyorsanız, lütfen gnome-keyring, kde-wallet, keepassxc vb. herhangi bir gizli servisin yüklü olduğundan emin olun.';
+      'Matubefy, verilerinizi güvenli bir şekilde depolamak için şifreleme kullanır. Ancak bunu başaramadı. Bu nedenle, güvensiz depolamaya geri dönecektir\nLinux kullanıyorsanız, lütfen gnome-keyring, kde-wallet, keepassxc vb. herhangi bir gizli servisin yüklü olduğundan emin olun.';
 
   @override
   String get querying_info => 'Bilgi sorgulanıyor...';
@@ -1007,7 +1007,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get choose_your_region_description =>
-      'Bu, Spotube\'un konumunuza uygun içerikleri göstermesine yardımcı olacaktır.';
+      'Bu, Matubefy\'un konumunuza uygun içerikleri göstermesine yardımcı olacaktır.';
 
   @override
   String get choose_your_language => 'Dilinizi seçin';
@@ -1017,7 +1017,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get help_project_grow_description =>
-      'Spotube açık kaynaklı bir projedir. Projeye katkıda bulunarak, hataları bildirerek veya yeni özellikler önererek bu projenin büyümesine yardımcı olabilirsiniz.';
+      'Matubefy açık kaynaklı bir projedir. Projeye katkıda bulunarak, hataları bildirerek veya yeni özellikler önererek bu projenin büyümesine yardımcı olabilirsiniz.';
 
   @override
   String get contribute_on_github => 'GitHub\'da katkıda bulun';
@@ -1033,7 +1033,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get enable_connect_description =>
-      'Spotube\'u diğer cihazlardan kontrol edin';
+      'Matubefy\'u diğer cihazlardan kontrol edin';
 
   @override
   String get devices => 'Cihazlar';

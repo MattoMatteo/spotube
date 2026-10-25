@@ -489,13 +489,13 @@ class AppLocalizationsVi extends AppLocalizations {
   String get about => 'Về chúng tôi';
 
   @override
-  String get u_love_spotube => 'Chúng tôi biết bạn yêu Spotube';
+  String get u_love_spotube => 'Chúng tôi biết bạn yêu Matubefy';
 
   @override
   String get check_for_updates => 'Kiểm tra cập nhật';
 
   @override
-  String get about_spotube => 'Về Spotube';
+  String get about_spotube => 'Về Matubefy';
 
   @override
   String get blacklist => 'blacklist';
@@ -505,7 +505,7 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get spotube_description =>
-      'Spotube, một ứng dụng Spotify nhẹ, đa nền tảng và miễn phí';
+      'Matubefy, một ứng dụng Spotify nhẹ, đa nền tảng và miễn phí';
 
   @override
   String get version => 'Phiên bản';
@@ -729,7 +729,7 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get download_ip_ban_warning =>
-      'Địa chỉ IP của bạn có thể bị chặn trên YouTube do yêu cầu tải xuống quá mức so với bình thường. Chặn IP có nghĩa là bạn không thể sử dụng YouTube (ngay cả khi bạn đã đăng nhập) ít nhất 2-3 tháng từ thiết bị IP đó. Và Spotube không chịu trách nhiệm nếu điều này xảy ra';
+      'Địa chỉ IP của bạn có thể bị chặn trên YouTube do yêu cầu tải xuống quá mức so với bình thường. Chặn IP có nghĩa là bạn không thể sử dụng YouTube (ngay cả khi bạn đã đăng nhập) ít nhất 2-3 tháng từ thiết bị IP đó. Và Matubefy không chịu trách nhiệm nếu điều này xảy ra';
 
   @override
   String get by_clicking_accept_terms =>
@@ -745,7 +745,7 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get download_agreement_3 =>
-      'Tôi hoàn toàn nhận thức được rằng địa chỉ IP của tôi có thể bị chặn trên YouTube và tôi không đổ lỗi cho Spotube hoặc chủ sở hữu/người đóng góp của nó về bất kỳ tai nạn nào do hành động này của tôi';
+      'Tôi hoàn toàn nhận thức được rằng địa chỉ IP của tôi có thể bị chặn trên YouTube và tôi không đổ lỗi cho Matubefy hoặc chủ sở hữu/người đóng góp của nó về bất kỳ tai nạn nào do hành động này của tôi';
 
   @override
   String get decline => 'Từ chối';
@@ -827,7 +827,7 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get encryption_failed_warning =>
-      'Spotube không thành công trong việc mã hóa nhằm lưu trữ dữ liêu an toàn. vậy nên sẽ chuyển về lưu trữ không an toàn\nNếu bạn đang sử dụng Linux, đảm bảo rằng bạn có sử dụng dịch vụ bảo mật (gnome-keyring, kde-wallet, keepassxc, v.v.)';
+      'Matubefy không thành công trong việc mã hóa nhằm lưu trữ dữ liêu an toàn. vậy nên sẽ chuyển về lưu trữ không an toàn\nNếu bạn đang sử dụng Linux, đảm bảo rằng bạn có sử dụng dịch vụ bảo mật (gnome-keyring, kde-wallet, keepassxc, v.v.)';
 
   @override
   String get querying_info => 'Đang truy vấn thông tin...';
@@ -1011,7 +1011,7 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get choose_your_region_description =>
-      'Điều này sẽ giúp Spotube hiển thị nội dung phù hợp cho vị trí của bạn.';
+      'Điều này sẽ giúp Matubefy hiển thị nội dung phù hợp cho vị trí của bạn.';
 
   @override
   String get choose_your_language => 'Chọn ngôn ngữ của bạn';
@@ -1021,7 +1021,7 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get help_project_grow_description =>
-      'Spotube là một dự án mã nguồn mở. Bạn có thể giúp dự án này phát triển bằng cách đóng góp vào dự án, báo cáo lỗi hoặc đề xuất tính năng mới.';
+      'Matubefy là một dự án mã nguồn mở. Bạn có thể giúp dự án này phát triển bằng cách đóng góp vào dự án, báo cáo lỗi hoặc đề xuất tính năng mới.';
 
   @override
   String get contribute_on_github => 'Đóng góp trên GitHub';
@@ -1037,7 +1037,7 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get enable_connect_description =>
-      'Điều khiển Spotube từ các thiết bị khác';
+      'Điều khiển Matubefy từ các thiết bị khác';
 
   @override
   String get devices => 'Thiết bị';

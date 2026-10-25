@@ -492,13 +492,13 @@ class AppLocalizationsNe extends AppLocalizations {
 
   @override
   String get u_love_spotube =>
-      'हामीले थाहा पारेका छौं तपाईंलाई Spotube मन पर्छ';
+      'हामीले थाहा पारेका छौं तपाईंलाई Matubefy मन पर्छ';
 
   @override
   String get check_for_updates => 'अपडेटहरूको लागि जाँच गर्नुहोस्';
 
   @override
-  String get about_spotube => 'Spotube को बारेमा';
+  String get about_spotube => 'Matubefy को बारेमा';
 
   @override
   String get blacklist => 'कालोसूची';
@@ -508,7 +508,7 @@ class AppLocalizationsNe extends AppLocalizations {
 
   @override
   String get spotube_description =>
-      'Spotube, एक हल्का, समृद्ध, स्वतन्त्र Spotify क्लाइयन';
+      'Matubefy, एक हल्का, समृद्ध, स्वतन्त्र Spotify क्लाइयन';
 
   @override
   String get version => 'संस्करण';
@@ -1013,7 +1013,7 @@ class AppLocalizationsNe extends AppLocalizations {
 
   @override
   String get choose_your_region_description =>
-      'यो Spotubeलाई तपाईंको स्थानका लागि सहि सामग्री देखाउने मद्दत गर्नेछ।';
+      'यो Matubefyलाई तपाईंको स्थानका लागि सहि सामग्री देखाउने मद्दत गर्नेछ।';
 
   @override
   String get choose_your_language => 'तपाईंको भाषा छनौट गर्नुहोस्';
@@ -1023,7 +1023,7 @@ class AppLocalizationsNe extends AppLocalizations {
 
   @override
   String get help_project_grow_description =>
-      'Spotube एक खुला स्रोतको परियोजना हो। तपाईं परियोजनामा योगदान गरेर, त्रुटिहरू सूचिकै, वा नयाँ सुविधाहरू सुझाव दिएर यस परियोजनामा वृद्धि गर्न सक्नुहुन्छ।';
+      'Matubefy एक खुला स्रोतको परियोजना हो। तपाईं परियोजनामा योगदान गरेर, त्रुटिहरू सूचिकै, वा नयाँ सुविधाहरू सुझाव दिएर यस परियोजनामा वृद्धि गर्न सक्नुहुन्छ।';
 
   @override
   String get contribute_on_github => 'GitHubमा योगदान गर्नुहोस्';
@@ -1039,7 +1039,7 @@ class AppLocalizationsNe extends AppLocalizations {
 
   @override
   String get enable_connect_description =>
-      'अन्य उपकरणहरूबाट Spotube कन्ट्रोल गर्नुहोस्';
+      'अन्य उपकरणहरूबाट Matubefy कन्ट्रोल गर्नुहोस्';
 
   @override
   String get devices => 'उपकरणहरू';

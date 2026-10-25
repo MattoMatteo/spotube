@@ -10,7 +10,7 @@ import 'package:spotube/extensions/context.dart';
 import 'package:spotube/modules/root/sidebar/sidebar_footer.dart';
 
 import 'package:spotube/provider/user_preferences/user_preferences_provider.dart';
-import 'package:spotube/components/spotube_logo_text.dart';
+import 'package:spotube/components/app_logo_text.dart';
 
 class Sidebar extends HookConsumerWidget {
   final Widget child;
@@ -52,7 +52,7 @@ class Sidebar extends HookConsumerWidget {
 
     final navigationButtons = [
       NavigationLabel(
-        child: mediaQuery.lgAndUp ? const SpotubeLogoText() : const Text(""),
+        child: mediaQuery.lgAndUp ? const AppLogoText() : const Text(""),
       ),
       for (final tile in sidebarTileList)
         NavigationButton(
