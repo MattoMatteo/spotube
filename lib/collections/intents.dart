@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -9,6 +7,7 @@ import 'package:spotube/modules/player/player_controls.dart';
 import 'package:spotube/provider/audio_player/querying_track_info.dart';
 import 'package:spotube/services/audio_player/audio_player.dart';
 import 'package:spotube/utils/platform.dart';
+import 'package:spotube/utils/exit_app.dart';
 
 class PlayPauseIntent extends Intent {
   final WidgetRef ref;
@@ -131,7 +130,7 @@ class CloseAppAction extends Action<CloseAppIntent> {
   @override
   invoke(intent) {
     if (kIsDesktop) {
-      exit(0);
+      exitApp();
     } else {
       SystemNavigator.pop();
     }

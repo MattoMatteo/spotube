@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:spotube/hooks/configurators/use_window_listener.dart';
 import 'package:spotube/models/database/database.dart';
@@ -8,6 +6,7 @@ import 'package:spotube/provider/user_preferences/user_preferences_provider.dart
 import 'package:local_notifier/local_notifier.dart';
 import 'package:spotube/utils/platform.dart';
 import 'package:window_manager/window_manager.dart';
+import 'package:spotube/utils/exit_app.dart';
 
 final closeNotification = !kIsDesktop
     ? null
@@ -18,7 +17,7 @@ final closeNotification = !kIsDesktop
           LocalNotificationAction(text: 'Close The App'),
         ],
       )..onClickAction = (value) {
-        exit(0);
+        exitApp();
       });
 
 void useCloseBehavior(WidgetRef ref) {
@@ -29,7 +28,7 @@ void useCloseBehavior(WidgetRef ref) {
         await windowManager.hide();
         closeNotification?.show();
       } else {
-        exit(0);
+        exitApp();
       }
     },
   );
