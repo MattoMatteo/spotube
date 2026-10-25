@@ -37,15 +37,22 @@ class RootAppPage extends HookConsumerWidget {
       return null;
     }, [backgroundColor, brightness]);
 
+    // The Scaffold below doesn't see the keyboard (its insets are removed), so
+    // it can't hide the footers by itself: they didn't fit above the keyboard
+    final isKeyboardOpen = MediaQuery.viewInsetsOf(context).bottom > 0;
+
     final scaffold = MediaQuery.removeViewInsets(
       context: context,
       removeBottom: true,
       child: SafeArea(
         top: false,
         child: Scaffold(
-          footers: const [
-            BottomPlayer(),
-            SpotubeNavigationBar(),
+          footers: [
+            Offstage(offstage: isKeyboardOpen, child: const BottomPlayer()),
+            Offstage(
+              offstage: isKeyboardOpen,
+              child: const SpotubeNavigationBar(),
+            ),
           ],
           floatingFooter: true,
           child: Sidebar(

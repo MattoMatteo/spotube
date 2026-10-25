@@ -58,7 +58,13 @@ class AppLogger {
         WidgetsFlutterBinding.ensureInitialized();
 
         FlutterError.onError = (details) {
-          reportError(details.exception, details.stack ?? StackTrace.current);
+          reportError(
+            details.exception,
+            details.stack ?? StackTrace.current,
+            // Flutter's full report also names the widget that caused the
+            // error (e.g. which Flex overflowed), the stack alone doesn't
+            kDebugMode ? details.toString() : "",
+          );
         };
 
         PlatformDispatcher.instance.onError = (error, stackTrace) {

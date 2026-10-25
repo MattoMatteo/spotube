@@ -45,14 +45,20 @@ class ArtistCard extends HookConsumerWidget {
               size: 130,
             ),
             const Gap(10),
-            AutoSizeText(
-              artist.name,
-              maxLines: 2,
-              textAlign: TextAlign.center,
-              overflow: TextOverflow.ellipsis,
-              style: theme.typography.bold,
+            // The name gets the room left in the fixed-height card, keeping
+            // the badges at the bottom: two lines didn't always fit
+            Expanded(
+              child: Align(
+                alignment: Alignment.topCenter,
+                child: AutoSizeText(
+                  artist.name,
+                  maxLines: 2,
+                  textAlign: TextAlign.center,
+                  overflow: TextOverflow.ellipsis,
+                  style: theme.typography.bold,
+                ),
+              ),
             ),
-            const Spacer(),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [

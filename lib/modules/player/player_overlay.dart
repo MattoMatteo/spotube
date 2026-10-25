@@ -25,11 +25,15 @@ class PlayerOverlay extends HookConsumerWidget {
     final canShow = playlist.activeTrack != null;
 
     final screenSize = MediaQuery.sizeOf(context);
+    // The root page keeps its footers, this panel included, above the system
+    // navigation bar (SafeArea), which isn't in MediaQuery's padding anymore
+    final view = View.of(context);
+    final bottomInset = view.padding.bottom / view.devicePixelRatio;
 
     final panelController = ref.watch(playerOverlayControllerProvider);
 
     return SlidingUpPanel(
-      maxHeight: screenSize.height,
+      maxHeight: screenSize.height - bottomInset,
       backdropEnabled: false,
       minHeight: canShow ? 63 : 0,
       onPanelSlide: (position) {
