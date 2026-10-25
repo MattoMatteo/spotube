@@ -123,7 +123,7 @@ dependencies:
     git:
       # Fork: VideoInfo no longer throws on reduced YouTube responses (missing uploadDate)
       url: https://github.com/MattoMatteo/flutter_new_pipe_extractor
-      ref: nullable-video-info
+      ref: main
   http_parser: ^4.1.2
   collection: any
   archive: ^4.0.7

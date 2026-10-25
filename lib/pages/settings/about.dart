@@ -130,7 +130,7 @@ class AboutSpotubePage extends HookConsumerWidget {
                               const TableCell(
                                 child: Hyperlink(
                                   "BSD-4-Clause",
-                                  "https://github.com/MattoMatteo/spotube/blob/patched-5.1.2/LICENSE",
+                                  "https://github.com/MattoMatteo/spotube/blob/main/LICENSE",
                                 ),
                               ),
                             ],

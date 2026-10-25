@@ -946,7 +946,7 @@ packages:
     dependency: "direct main"
     description:
       path: "."
-      ref: nullable-video-info
+      ref: main
       resolved-ref: "0baf71250fd2820179fb8d57675b1606d57d4290"
       url: "https://github.com/MattoMatteo/flutter_new_pipe_extractor"
     source: git

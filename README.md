@@ -38,10 +38,10 @@ Android will warn you before installing.
 
 | Repository | What it is |
 |---|---|
-| [MattoMatteo/spotube](https://github.com/MattoMatteo/spotube) (`patched-5.1.2`) | This app |
-| [MattoMatteo/spotube-plugin-spotify](https://github.com/MattoMatteo/spotube-plugin-spotify) (`hetu-fixes`) | Spotify metadata plugin |
-| [MattoMatteo/spotify-gql-client](https://github.com/MattoMatteo/spotify-gql-client) (`hetu-fixes`) | Spotify GraphQL client used by the plugin |
-| [MattoMatteo/flutter_new_pipe_extractor](https://github.com/MattoMatteo/flutter_new_pipe_extractor) (`nullable-video-info`) | Flutter bridge to NewPipe |
+| [MattoMatteo/spotube](https://github.com/MattoMatteo/spotube) | This app |
+| [MattoMatteo/spotube-plugin-spotify](https://github.com/MattoMatteo/spotube-plugin-spotify) | Spotify metadata plugin |
+| [MattoMatteo/spotify-gql-client](https://github.com/MattoMatteo/spotify-gql-client) | Spotify GraphQL client used by the plugin |
+| [MattoMatteo/flutter_new_pipe_extractor](https://github.com/MattoMatteo/flutter_new_pipe_extractor) | Flutter bridge to NewPipe |
 | [MattoMatteo/NewPipeCLI](https://github.com/MattoMatteo/NewPipeCLI) | NewPipeExtractor as a desktop executable |
 
 ## License
