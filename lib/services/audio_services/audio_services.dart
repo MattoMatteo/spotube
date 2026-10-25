@@ -39,6 +39,7 @@ class AudioServices with WidgetsBindingObserver {
               androidNotificationOngoing: false,
               androidStopForegroundOnPause: false,
               androidNotificationChannelDescription: "Matubefy Media Controls",
+              androidNotificationIcon: "drawable/ic_notification",
               androidBrowsableRootExtras: AndroidAutoLibrary.rootExtras,
             ),
           )

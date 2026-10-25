@@ -7,7 +7,10 @@ flutter_launcher_icons:
   min_sdk_android: 21 # android min sdk min:16, default 21
   adaptive_icon_background: "#242832"
   adaptive_icon_foreground: "assets/branding/spotube-logo-foreground.png"
-  # adaptive_icon_monochrome: "assets/branding/icon/monochrome.png"
+  # The foreground and monochrome images already keep the adaptive icon's
+  # safe zone (sources in assets/branding/source)
+  adaptive_icon_foreground_inset: 0
+  adaptive_icon_monochrome: "assets/branding/spotube-logo-monochrome.png"
 
   ios: true
   # image_path_ios: "assets/branding/icon/icon.png"
@@ -22,7 +25,7 @@ flutter_launcher_icons:
   windows:
     generate: true
     image_path: "assets/branding/spotube-logo.png"
-    icon_size: 48 # min:48, max:256, default: 48
+    icon_size: 256 # min:48, max:256, default: 48
 
   macos:
     generate: true
