@@ -5,6 +5,7 @@ import 'package:spotube/collections/env.dart';
 import 'package:spotube/models/metadata/metadata.dart';
 import 'package:spotube/provider/audio_player/audio_player.dart';
 import 'package:spotube/services/audio_player/audio_player.dart';
+import 'package:spotube/services/audio_services/android_auto_library.dart';
 import 'package:spotube/services/audio_services/mobile_audio_service.dart';
 import 'package:spotube/services/audio_services/windows_audio_service.dart';
 import 'package:spotube/utils/platform.dart';
@@ -23,7 +24,8 @@ class AudioServices with WidgetsBindingObserver {
   ) async {
     final mobile = kIsMobile || kIsMacOS || kIsLinux
         ? await AudioService.init(
-            builder: () => MobileAudioService(playback),
+            builder: () =>
+                MobileAudioService(playback, AndroidAutoLibrary(ref)),
             config: AudioServiceConfig(
               androidNotificationChannelId: switch ((
                 kIsLinux,
@@ -37,6 +39,7 @@ class AudioServices with WidgetsBindingObserver {
               androidNotificationOngoing: false,
               androidStopForegroundOnPause: false,
               androidNotificationChannelDescription: "Matubefy Media Controls",
+              androidBrowsableRootExtras: AndroidAutoLibrary.rootExtras,
             ),
           )
         : null;
@@ -47,17 +50,11 @@ class AudioServices with WidgetsBindingObserver {
 
   Future<void> addTrack(SpotubeTrackObject track) async {
     await smtc?.addTrack(track);
-    mobile?.addItem(MediaItem(
-      id: track.id,
-      album: track.album.name,
-      title: track.name,
-      artist: track.artists.asString(),
-      duration: Duration(milliseconds: track.durationMs),
-      artUri: (track.album.images).asUri(
-        placeholder: ImagePlaceholder.albumArt,
-      ),
-      playable: true,
-    ));
+    mobile?.addItem(track.toMediaItem());
+  }
+
+  void setTracksQueue(List<SpotubeTrackObject> tracks, int currentIndex) {
+    mobile?.setTracksQueue(tracks, currentIndex);
   }
 
   void activateSession() {

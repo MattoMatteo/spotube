@@ -52,6 +52,10 @@ class AudioPlayerStreamListeners {
       try {
         if (audioPlayerState.activeTrack == null) return;
         notificationService.addTrack(audioPlayerState.activeTrack!);
+        notificationService.setTracksQueue(
+          audioPlayerState.tracks,
+          audioPlayerState.currentIndex,
+        );
         discord.updatePresence(audioPlayerState.activeTrack!);
       } catch (e, stack) {
         AppLogger.reportError(e, stack);
