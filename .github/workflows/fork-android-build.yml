@@ -1,5 +1,5 @@
-# Android APK for this fork of Spotube 5.1.2 ("Spotube ME", id
-# oss.krtirtho.spotube.matteo, installs next to the official app).
+# Android APK for Matubefy, this fork of Spotube 5.1.2 (application id
+# io.github.mattomatteo.matubefy, installs next to the official app).
 # Mirrors the Android job of spotube-release-binary.yml and uploads the APK to
 # the same pre-release as fork-windows-build.yml (no Actions artifacts).
 name: Fork Android Build
@@ -100,11 +100,12 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           tag: ${{ inputs.release_tag }}
           commit: ${{ github.sha }}
-          name: Spotube 5.1.2 (fork build)
+          name: Matubefy (based on Spotube 5.1.2)
           prerelease: true
           allowUpdates: true
           omitBodyDuringUpdate: true
           omitNameDuringUpdate: true
           # Only replaces assets with the same name: the Windows installer stays
           replacesArtifacts: true
-          artifacts: build/Spotube-android-all-arch.apk
+          # License files travel with the binaries (BSD-4-Clause, MIT, GPL-3.0 require it)
+          artifacts: build/Spotube-android-all-arch.apk,LICENSE,NOTICE.md,licenses/*.txt

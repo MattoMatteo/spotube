@@ -61,10 +61,14 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           tag: ${{ inputs.release_tag }}
           commit: ${{ github.sha }}
-          name: Spotube 5.1.2 (fork build)
+          name: Matubefy (based on Spotube 5.1.2)
           body: |
-            Unofficial Windows build of Spotube 5.1.2 from branch `${{ github.ref_name }}`, commit ${{ github.sha }}.
+            Matubefy, a fork of Spotube 5.1.2. Windows build from branch `${{ github.ref_name }}`, commit ${{ github.sha }}.
+
+            This product includes software developed by Kingkor Roy Tirtho.
+            Not affiliated with Spotube, Spotify or YouTube. Licenses: see LICENSE (Spotube, BSD-4-Clause), NOTICE.md and the licenses/ files attached below.
           prerelease: true
           allowUpdates: true
           replacesArtifacts: true
-          artifacts: dist/Spotube-windows-x86_64-setup.exe
+          # License files travel with the binaries (BSD-4-Clause, MIT, GPL-3.0 require it)
+          artifacts: dist/Spotube-windows-x86_64-setup.exe,LICENSE,NOTICE.md,licenses/*.txt
