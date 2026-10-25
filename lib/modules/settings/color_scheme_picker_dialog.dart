@@ -3,6 +3,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:shadcn_flutter/shadcn_flutter.dart';
 import 'package:shadcn_flutter/shadcn_flutter_extension.dart';
+import 'package:spotube/collections/matubefy_theme.dart';
 import 'package:spotube/extensions/context.dart';
 
 import 'package:spotube/provider/user_preferences/user_preferences_provider.dart';
@@ -26,6 +27,7 @@ class SpotubeColor extends Color {
 }
 
 final Set<SpotubeColor> colorsMap = {
+  const SpotubeColor(0xFFFF8070, name: "matubefy"),
   SpotubeColor(Colors.slate.value, name: "slate"),
   SpotubeColor(Colors.gray.value, name: "gray"),
   SpotubeColor(Colors.zinc.value, name: "zinc"),
@@ -41,6 +43,7 @@ final Set<SpotubeColor> colorsMap = {
 };
 
 final colorSchemeMap = {
+  "matubefy": matubefyColorScheme,
   "slate": LegacyColorSchemes.slate,
   "gray": LegacyColorSchemes.gray,
   "zinc": LegacyColorSchemes.zinc,

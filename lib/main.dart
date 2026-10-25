@@ -19,6 +19,7 @@ import 'package:smtc_windows/smtc_windows.dart';
 import 'package:spotube/collections/env.dart';
 import 'package:spotube/collections/http-override.dart';
 import 'package:spotube/collections/intents.dart';
+import 'package:spotube/collections/matubefy_theme.dart';
 import 'package:spotube/collections/routes.dart';
 import 'package:spotube/hooks/configurators/use_close_behavior.dart';
 import 'package:spotube/hooks/configurators/use_deep_linking.dart';
@@ -226,7 +227,7 @@ class Spotube extends HookConsumerWidget {
         iconTheme: const IconThemeProperties(),
         colorScheme:
             colorSchemeMap[accentMaterialColor.name]?.call(ThemeMode.light) ??
-                LegacyColorSchemes.lightSlate(),
+                matubefyColorScheme(ThemeMode.light),
         surfaceOpacity: .8,
         surfaceBlur: 10,
       ),
@@ -235,7 +236,7 @@ class Spotube extends HookConsumerWidget {
         iconTheme: const IconThemeProperties(),
         colorScheme:
             colorSchemeMap[accentMaterialColor.name]?.call(ThemeMode.dark) ??
-                LegacyColorSchemes.darkSlate(),
+                matubefyColorScheme(ThemeMode.dark),
         surfaceOpacity: .8,
         surfaceBlur: 10,
       ),

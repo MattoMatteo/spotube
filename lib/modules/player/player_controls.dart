@@ -5,6 +5,7 @@ import 'package:media_kit/media_kit.dart';
 import 'package:palette_generator/palette_generator.dart';
 import 'package:shadcn_flutter/shadcn_flutter.dart';
 
+import 'package:spotube/collections/matubefy_theme.dart';
 import 'package:spotube/collections/spotube_icons.dart';
 import 'package:spotube/collections/intents.dart';
 import 'package:spotube/extensions/constrains.dart';
@@ -96,23 +97,26 @@ class PlayerControls extends HookConsumerWidget {
                           ).call,
                           child: SizedBox(
                             width: mediaQuery.xlAndUp ? 600 : 500,
-                            child: Slider(
-                              hintValue: SliderValue.single(bufferProgress),
-                              value:
-                                  SliderValue.single(progress.value.toDouble()),
-                              onChanged: isFetchingActiveTrack
-                                  ? null
-                                  : (v) {
-                                      progress.value = v.value;
-                                    },
-                              onChangeEnd: (value) async {
-                                await audioPlayer.seek(
-                                  Duration(
-                                    seconds: (value.value * duration.inSeconds)
-                                        .toInt(),
-                                  ),
-                                );
-                              },
+                            child: MatubefyGradientMask(
+                              child: Slider(
+                                hintValue: SliderValue.single(bufferProgress),
+                                value: SliderValue.single(
+                                    progress.value.toDouble()),
+                                onChanged: isFetchingActiveTrack
+                                    ? null
+                                    : (v) {
+                                        progress.value = v.value;
+                                      },
+                                onChangeEnd: (value) async {
+                                  await audioPlayer.seek(
+                                    Duration(
+                                      seconds:
+                                          (value.value * duration.inSeconds)
+                                              .toInt(),
+                                    ),
+                                  );
+                                },
+                              ),
                             ),
                           ),
                         ),
@@ -194,6 +198,7 @@ class PlayerControls extends HookConsumerWidget {
                       ),
                     ).call,
                     child: IconButton.primary(
+                      variance: matubefyGradientButton,
                       size: buttonSize,
                       shape: ButtonShape.circle,
                       icon: isFetchingActiveTrack

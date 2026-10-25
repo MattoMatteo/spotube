@@ -102,7 +102,7 @@ class PreferencesTable extends Table {
       systemTitleBar: false,
       skipNonMusic: false,
       closeBehavior: CloseBehavior.close,
-      accentColorScheme: SpotubeColor(Colors.slate.value, name: "Slate"),
+      accentColorScheme: const SpotubeColor(0xFFFF8070, name: "matubefy"),
       layoutMode: LayoutMode.adaptive,
       locale: const Locale("system", "system"),
       market: Market.US,
