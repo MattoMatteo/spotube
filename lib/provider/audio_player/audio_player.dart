@@ -79,7 +79,9 @@ class AudioPlayerNotifier extends Notifier<AudioPlayerState> {
       await audioPlayer.openPlaylist(
         tracks.asMediaList(),
         initialIndex: currentIndex,
-        autoPlay: false,
+        // Android Auto may already have pressed play while the saved state was
+        // being read: don't pause it again
+        autoPlay: audioPlayer.isPlaying,
       );
     }
 

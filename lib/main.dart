@@ -26,6 +26,7 @@ import 'package:spotube/hooks/configurators/use_disable_battery_optimizations.da
 import 'package:spotube/hooks/configurators/use_fix_window_stretching.dart';
 import 'package:spotube/hooks/configurators/use_get_storage_perms.dart';
 import 'package:spotube/hooks/configurators/use_has_touch.dart';
+import 'package:spotube/hooks/configurators/use_provider_rebuilds_without_frames.dart';
 import 'package:spotube/models/database/database.dart';
 import 'package:spotube/modules/settings/color_scheme_picker_dialog.dart';
 import 'package:spotube/provider/audio_player/audio_player_streams.dart';
@@ -80,9 +81,12 @@ Future<void> main(List<String> rawArgs) async {
 
     await migrateMacOsFromSandboxToNoSandbox();
 
-    // force High Refresh Rate on some Android devices (like One Plus)
+    // force High Refresh Rate on some Android devices (like One Plus).
+    // Throws without an Activity, e.g. when Android Auto starts the app
+    // through the audio service: that must not abort the startup.
     if (kIsAndroid) {
-      await FlutterDisplayMode.setHighRefreshRate();
+      await FlutterDisplayMode.setHighRefreshRate()
+          .catchError((e, stack) => null);
     }
     if (kIsAndroid || kIsDesktop) {
       await NewPipeExtractor.init();
@@ -160,6 +164,7 @@ class Spotube extends HookConsumerWidget {
     ref.listen(metadataPluginUpdateCheckerProvider, (_, __) {});
     ref.listen(audioSourcePluginUpdateCheckerProvider, (_, __) {});
 
+    useProviderRebuildsWithoutFrames(context);
     useFixWindowStretching();
     useDisableBatteryOptimizations();
     useDeepLinking(ref, router);
