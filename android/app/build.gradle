@@ -109,10 +109,10 @@ android {
         }
         stable {
             dimension "default"
-            // Fork build: own id and name, so it installs next to the official
-            // Spotube (an APK signed with another key can't replace it)
-            resValue "string", "app_name_en", "Spotube ME"
-            applicationIdSuffix ".matteo"
+            // Matubefy (fork): own id and name, so it installs next to the
+            // official Spotube (an APK signed with another key can't replace it)
+            resValue "string", "app_name_en", "Matubefy"
+            applicationId "io.github.mattomatteo.matubefy"
             signingConfig hasReleaseKeystore ? signingConfigs.release : signingConfigs.debug
         }
     }
