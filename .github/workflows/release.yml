@@ -1,12 +1,14 @@
-# Publishes a Matubefy release when a vX.Y.Z tag is pushed: the version in
-# pubspec.yaml must match the tag. The release stays a draft until both the APK
-# and the Windows installer are attached, so the app's updater (which reads
-# releases/latest) never offers a release without its files.
+# Publishes a Matubefy release when a matubefy-vX.Y.Z tag is pushed: the version
+# in pubspec.yaml must match the tag. The prefix keeps Matubefy's tags apart from
+# the v1.0.0…v5.1.2 ones inherited from Spotube's history.
+# The release stays a draft until both the APK and the Windows installer are
+# attached, so the app's updater (which reads releases/latest) never offers a
+# release without its files.
 name: Release
 on:
   push:
     tags:
-      - "v*"
+      - "matubefy-v*"
 
 permissions:
   contents: write
@@ -20,7 +22,7 @@ jobs:
       - name: Check the tag matches pubspec.yaml
         run: |
           version=$(sed -nE 's/^version: ([^+]+).*/\1/p' pubspec.yaml)
-          if [ "v$version" != "$GITHUB_REF_NAME" ]; then
+          if [ "matubefy-v$version" != "$GITHUB_REF_NAME" ]; then
             echo "::error::Tag $GITHUB_REF_NAME doesn't match pubspec.yaml version $version"
             exit 1
           fi
@@ -39,7 +41,7 @@ jobs:
           $generated
           EOF
           gh release create "$GITHUB_REF_NAME" --draft --verify-tag \
-            --title "Matubefy ${GITHUB_REF_NAME#v}" --notes-file notes.md
+            --title "Matubefy ${GITHUB_REF_NAME#matubefy-v}" --notes-file notes.md
 
   android:
     needs: create

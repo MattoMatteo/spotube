@@ -61,7 +61,8 @@ abstract class AppUpdater {
 
     final data = response.data as Map<String, dynamic>;
     final version = Version.parse(
-      (data["tag_name"] as String).replaceFirst(RegExp("^v"), ""),
+      // Tags are matubefy-vX.Y.Z, apart from the vX.Y.Z ones of Spotube
+      (data["tag_name"] as String).replaceFirst(RegExp("^(matubefy-)?v"), ""),
     );
     final current = Version.parse((await PackageInfo.fromPlatform()).version);
     if (version <= current) return null;

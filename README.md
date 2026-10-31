@@ -54,7 +54,9 @@ offers as an update.
 
 1. Set the new version in `pubspec.yaml`, e.g. `version: 1.0.1+47`: the build number after `+`
    must always grow, or Android refuses the update.
-2. Commit, then tag and push: `git tag v1.0.1 && git push origin main v1.0.1`.
+2. Commit, then tag and push: `git tag matubefy-v1.0.1 && git push origin main matubefy-v1.0.1`.
+   The `matubefy-` prefix keeps the tags apart from the `v1.0.0`…`v5.1.2` ones inherited from
+   Spotube's history.
 
 The [Release workflow](.github/workflows/release.yml) builds the APK and the Windows installer,
 attaches them to a draft release with the generated notes and publishes it once both are there.
