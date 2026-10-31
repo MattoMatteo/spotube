@@ -24,7 +24,14 @@ class MetadataPluginAudioSourceEndpoint {
     final raw = await hetuMetadataAudioSource
         .invoke("matches", positionalArgs: [track.toJson()]) as List;
 
-    return raw.map((e) => SpotubeAudioSourceMatchObject.fromJson(e)).toList();
+    return raw.map((e) {
+      final json = Map<String, dynamic>.from(e as Map);
+      // Plugins pass on the YouTubeEngine's duration, in seconds, while the
+      // model (and the database copy of it) reads microseconds
+      json["duration"] = ((json["duration"] as num?) ?? 0).toDouble() *
+          Duration.microsecondsPerSecond;
+      return SpotubeAudioSourceMatchObject.fromJson(json);
+    }).toList();
   }
 
   Future<List<SpotubeAudioSourceStreamObject>> streams(
