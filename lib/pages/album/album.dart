@@ -45,8 +45,11 @@ class AlbumPage extends HookConsumerWidget {
             placeholder: ImagePlaceholder.albumArt,
           ),
           title: album.name,
-          description:
-              "${context.l10n.released} • ${album.releaseDate} • ${album.artists.first.name}",
+          // Albums can come without artists (older plugin versions)
+          description: [
+            "${context.l10n.released} • ${album.releaseDate}",
+            if (album.artists.isNotEmpty) album.artists.first.name,
+          ].join(" • "),
           tracks: tracks.asData?.value.items ?? [],
           error: tracks.error,
           pagination: PaginationProps(
@@ -65,7 +68,7 @@ class AlbumPage extends HookConsumerWidget {
           routePath: "/album/${album.id}",
           shareUrl: album.externalUri,
           isLiked: isSavedAlbum.asData?.value ?? false,
-          owner: album.artists.first.name,
+          owner: album.artists.firstOrNull?.name,
           onHeart: isSavedAlbum.asData?.value == null
               ? null
               : () async {
