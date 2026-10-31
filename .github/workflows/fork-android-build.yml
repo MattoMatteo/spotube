@@ -1,15 +1,22 @@
-# Android APK for Matubefy, this fork of Spotube 5.1.2 (application id
-# io.github.mattomatteo.matubefy, installs next to the official app).
-# Mirrors the Android job of spotube-release-binary.yml and uploads the APK to
-# the same pre-release as fork-windows-build.yml (no Actions artifacts).
+# Android APK for Matubefy (application id io.github.mattomatteo.matubefy,
+# installs next to the official Spotube). Mirrors the Android job of
+# spotube-release-binary.yml and uploads the APK to a GitHub release (no
+# Actions artifacts).
+# Run by hand it uploads to a test pre-release, which the app never offers as an
+# update; release.yml calls it to fill the draft of a real release.
 name: Fork Android Build
 on:
   workflow_dispatch:
     inputs:
       release_tag:
         type: string
-        description: Pre-release tag the APK is uploaded to (replaced on every build)
-        default: v5.1.2-fork
+        description: Test pre-release the APK is uploaded to (replaced on every build)
+        default: test-build
+  workflow_call:
+    inputs:
+      release_tag:
+        type: string
+        required: true
 
 env:
   FLUTTER_VERSION: 3.35.2
@@ -73,9 +80,10 @@ jobs:
         run: dart cli/cli.dart build --arch=all android
         env:
           CHANNEL: stable
-          # Same .env as the Windows build: no update check, optional Last.fm keys
+          # Same .env as the Windows build: update check (our releases), optional
+          # Last.fm keys
           DOTENV: |
-            ENABLE_UPDATE_CHECK=0
+            ENABLE_UPDATE_CHECK=1
             HIDE_DONATIONS=0
             LASTFM_API_KEY=${{ secrets.LASTFM_API_KEY || 'none' }}
             LASTFM_API_SECRET=${{ secrets.LASTFM_API_SECRET || 'none' }}
@@ -94,18 +102,20 @@ jobs:
           fi
           keytool -printcert -jarfile "$apk" 2>&1 | head -12 || true
 
-      - name: Upload APK to pre-release ${{ inputs.release_tag }}
-        uses: ncipollo/release-action@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          tag: ${{ inputs.release_tag }}
-          commit: ${{ github.sha }}
-          name: Matubefy (based on Spotube 5.1.2)
-          prerelease: true
-          allowUpdates: true
-          omitBodyDuringUpdate: true
-          omitNameDuringUpdate: true
-          # Only replaces assets with the same name: the Windows installer stays
-          replacesArtifacts: true
+      - name: Upload APK to release ${{ inputs.release_tag }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAG: ${{ inputs.release_tag }}
+        run: |
+          version=$(sed -nE 's/^version: ([^+]+).*/\1/p' pubspec.yaml)
+          # The app's updater picks the asset by its .apk extension
+          apk="Matubefy-$version-android.apk"
+          cp build/Spotube-android-all-arch.apk "$apk"
+          # A real release is created as a draft by release.yml beforehand
+          if ! gh release view "$TAG" > /dev/null 2>&1; then
+            gh release create "$TAG" --prerelease --target "$GITHUB_SHA" \
+              --title "Matubefy test build" \
+              --notes "Test build from branch \`$GITHUB_REF_NAME\`, not offered as an update by the app."
+          fi
           # License files travel with the binaries (BSD-4-Clause, MIT, GPL-3.0 require it)
-          artifacts: build/Spotube-android-all-arch.apk,LICENSE,NOTICE.md,licenses/*.txt
+          gh release upload "$TAG" "$apk" LICENSE NOTICE.md licenses/*.txt --clobber

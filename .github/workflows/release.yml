@@ -1,0 +1,67 @@
+# Publishes a Matubefy release when a vX.Y.Z tag is pushed: the version in
+# pubspec.yaml must match the tag. The release stays a draft until both the APK
+# and the Windows installer are attached, so the app's updater (which reads
+# releases/latest) never offers a release without its files.
+name: Release
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  create:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check the tag matches pubspec.yaml
+        run: |
+          version=$(sed -nE 's/^version: ([^+]+).*/\1/p' pubspec.yaml)
+          if [ "v$version" != "$GITHUB_REF_NAME" ]; then
+            echo "::error::Tag $GITHUB_REF_NAME doesn't match pubspec.yaml version $version"
+            exit 1
+          fi
+
+      - name: Create draft release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Changes since the previous release, from GitHub's generator
+          generated=$(gh api "repos/$GITHUB_REPOSITORY/releases/generate-notes" \
+            -f tag_name="$GITHUB_REF_NAME" --jq .body)
+          cat > notes.md <<EOF
+          This product includes software developed by Kingkor Roy Tirtho.
+          Not affiliated with Spotube, Spotify or YouTube. Licenses: see LICENSE (Spotube, BSD-4-Clause), NOTICE.md and the licenses/ files attached below.
+
+          $generated
+          EOF
+          gh release create "$GITHUB_REF_NAME" --draft --verify-tag \
+            --title "Matubefy ${GITHUB_REF_NAME#v}" --notes-file notes.md
+
+  android:
+    needs: create
+    uses: ./.github/workflows/fork-android-build.yml
+    with:
+      release_tag: ${{ github.ref_name }}
+    secrets: inherit
+
+  windows:
+    needs: create
+    uses: ./.github/workflows/fork-windows-build.yml
+    with:
+      release_tag: ${{ github.ref_name }}
+    secrets: inherit
+
+  publish:
+    needs: [android, windows]
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release edit "$GITHUB_REF_NAME" --repo "$GITHUB_REPOSITORY" \
+            --draft=false --latest

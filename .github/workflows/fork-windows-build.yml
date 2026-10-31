@@ -1,15 +1,22 @@
-# Windows-only build for this fork of Spotube 5.1.2.
-# Mirrors the Windows job of spotube-release-binary.yml, but publishes the
-# installer to a GitHub pre-release instead of uploading Actions artifacts
-# (release assets don't count against the Actions storage quota).
+# Windows installer for Matubefy. Mirrors the Windows job of
+# spotube-release-binary.yml, but publishes the installer to a GitHub release
+# instead of uploading Actions artifacts (release assets don't count against the
+# Actions storage quota).
+# Run by hand it uploads to a test pre-release, which the app never offers as an
+# update; release.yml calls it to fill the draft of a real release.
 name: Fork Windows Build
 on:
   workflow_dispatch:
     inputs:
       release_tag:
         type: string
-        description: Pre-release tag the installer is uploaded to (replaced on every build)
-        default: v5.1.2-fork
+        description: Test pre-release the installer is uploaded to (replaced on every build)
+        default: test-build
+  workflow_call:
+    inputs:
+      release_tag:
+        type: string
+        required: true
 
 env:
   FLUTTER_VERSION: 3.35.2
@@ -47,28 +54,29 @@ jobs:
         run: dart cli/cli.dart build --arch=x86 windows
         env:
           CHANNEL: stable
-          # Update check off, so the app doesn't offer the upstream releases.
-          # Last.fm keys are optional repo secrets; without them scrobbling won't work.
+          # Update check on (our releases). Last.fm keys are optional repo secrets;
+          # without them scrobbling won't work.
           DOTENV: |
-            ENABLE_UPDATE_CHECK=0
+            ENABLE_UPDATE_CHECK=1
             HIDE_DONATIONS=0
             LASTFM_API_KEY=${{ secrets.LASTFM_API_KEY || 'none' }}
             LASTFM_API_SECRET=${{ secrets.LASTFM_API_SECRET || 'none' }}
 
-      - name: Upload installer to pre-release ${{ inputs.release_tag }}
-        uses: ncipollo/release-action@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          tag: ${{ inputs.release_tag }}
-          commit: ${{ github.sha }}
-          name: Matubefy (based on Spotube 5.1.2)
-          body: |
-            Matubefy, a fork of Spotube 5.1.2. Windows build from branch `${{ github.ref_name }}`, commit ${{ github.sha }}.
-
-            This product includes software developed by Kingkor Roy Tirtho.
-            Not affiliated with Spotube, Spotify or YouTube. Licenses: see LICENSE (Spotube, BSD-4-Clause), NOTICE.md and the licenses/ files attached below.
-          prerelease: true
-          allowUpdates: true
-          replacesArtifacts: true
+      - name: Upload installer to release ${{ inputs.release_tag }}
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAG: ${{ inputs.release_tag }}
+        run: |
+          version=$(sed -nE 's/^version: ([^+]+).*/\1/p' pubspec.yaml)
+          # The app's updater picks the asset by its -setup.exe suffix
+          exe="Matubefy-$version-windows-setup.exe"
+          cp dist/Spotube-windows-x86_64-setup.exe "$exe"
+          # A real release is created as a draft by release.yml beforehand
+          if ! gh release view "$TAG" > /dev/null 2>&1; then
+            gh release create "$TAG" --prerelease --target "$GITHUB_SHA" \
+              --title "Matubefy test build" \
+              --notes "Test build from branch \`$GITHUB_REF_NAME\`, not offered as an update by the app."
+          fi
           # License files travel with the binaries (BSD-4-Clause, MIT, GPL-3.0 require it)
-          artifacts: dist/Spotube-windows-x86_64-setup.exe,LICENSE,NOTICE.md,licenses/*.txt
+          gh release upload "$TAG" "$exe" LICENSE NOTICE.md licenses/*.txt --clobber
