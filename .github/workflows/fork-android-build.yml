@@ -80,11 +80,12 @@ jobs:
         run: dart cli/cli.dart build --arch=all android
         env:
           CHANNEL: stable
-          # Same .env as the Windows build: update check (our releases), optional
+          # Same .env as the Windows build: update check (our releases), no
+          # donation links (they lead to Spotube's Open Collective), optional
           # Last.fm keys
           DOTENV: |
             ENABLE_UPDATE_CHECK=1
-            HIDE_DONATIONS=0
+            HIDE_DONATIONS=1
             LASTFM_API_KEY=${{ secrets.LASTFM_API_KEY || 'none' }}
             LASTFM_API_SECRET=${{ secrets.LASTFM_API_SECRET || 'none' }}
 

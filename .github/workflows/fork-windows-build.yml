@@ -54,11 +54,12 @@ jobs:
         run: dart cli/cli.dart build --arch=x86 windows
         env:
           CHANNEL: stable
-          # Update check on (our releases). Last.fm keys are optional repo secrets;
+          # Update check on (our releases), no donation links (they lead to
+          # Spotube's Open Collective). Last.fm keys are optional repo secrets;
           # without them scrobbling won't work.
           DOTENV: |
             ENABLE_UPDATE_CHECK=1
-            HIDE_DONATIONS=0
+            HIDE_DONATIONS=1
             LASTFM_API_KEY=${{ secrets.LASTFM_API_KEY || 'none' }}
             LASTFM_API_SECRET=${{ secrets.LASTFM_API_SECRET || 'none' }}
 
