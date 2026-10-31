@@ -27,12 +27,37 @@ The original Spotube README is kept in [README.spotube.md](README.spotube.md).
 - **Last.fm**: you can use your own Last.fm API key (Settings → Scrobbling).
 - **New installs** default to the NewPipe engine.
 - **Android**: application id `io.github.mattomatteo.matubefy`, installs next to the official app.
+- **Android Auto**: browse home, library, recently played and search from the car, with the queue
+  and voice requests; the app also starts and plays when the car launches it.
+- **Own look**: Matubefy icon and splash, and a default color scheme with the logo's gradient.
+- **Windows**: closing the app is instant (it used to freeze for seconds on a crash at exit).
+- **Updates**: the app checks this repository's releases and updates itself (see below).
 
-## Downloads
+## Downloads and updates
 
-Windows installer and Android APK: [releases](https://github.com/MattoMatteo/spotube/releases)
-(pre-release `v5.1.2-fork`). They are not signed by a known publisher, so Windows SmartScreen and
-Android will warn you before installing.
+Windows installer and Android APK: [latest release](https://github.com/MattoMatteo/spotube/releases/latest).
+They are not signed by a known publisher, so Windows SmartScreen and Android will warn you before
+installing.
+
+Once installed, the app checks for a newer release at startup (Settings → About → Check for
+updates, which also has a button to check right away) and offers to update:
+
+- **Android** downloads the new APK and opens the system installer. The first time, Android asks to
+  allow Matubefy to install apps. The app's data is kept.
+- **Windows** downloads the new installer and runs it (UAC prompt): Matubefy closes, updates and
+  opens again.
+
+Builds started by hand from the Actions tab go to the `test-build` pre-release, which the app never
+offers as an update.
+
+## Releasing
+
+1. Set the new version in `pubspec.yaml`, e.g. `version: 1.0.1+47`: the build number after `+`
+   must always grow, or Android refuses the update.
+2. Commit, then tag and push: `git tag v1.0.1 && git push origin main v1.0.1`.
+
+The [Release workflow](.github/workflows/release.yml) builds the APK and the Windows installer,
+attaches them to a draft release with the generated notes and publishes it once both are there.
 
 ## Related forks
 

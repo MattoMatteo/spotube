@@ -495,5 +495,15 @@
   "lastfm_api_key": "Chiave API",
   "lastfm_api_secret": "Segreto condiviso (shared secret)",
   "lastfm_api_key_optional_info": "Facoltativo: usa una tua chiave API di Last.fm invece di quella inclusa. Puoi crearla qui:",
-  "lastfm_api_key_required_info": "Questa build non include una chiave API di Last.fm: creane una tua (gratuita) e inseriscila qui sotto:"
+  "lastfm_api_key_required_info": "Questa build non include una chiave API di Last.fm: creane una tua (gratuita) e inseriscila qui sotto:",
+  "check_for_updates_now": "Cerca aggiornamenti ora",
+  "app_up_to_date": "Matubefy è aggiornato",
+  "update_check_failed": "Impossibile controllare gli aggiornamenti",
+  "matubefy_update_available": "È disponibile Matubefy {version}",
+  "later": "Più tardi",
+  "open_release_page": "Apri la pagina della release",
+  "downloading_update": "Download dell'aggiornamento… {percent}%",
+  "update_closes_app": "Matubefy si chiude durante l'installazione dell'aggiornamento e poi si riapre.",
+  "install_permission_needed": "Consenti a Matubefy di installare app, poi riprova",
+  "update_failed": "Aggiornamento non riuscito"
 }

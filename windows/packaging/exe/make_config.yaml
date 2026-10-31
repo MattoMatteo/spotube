@@ -7,3 +7,6 @@ install_dir_name: Spotube
 script_template: inno_setup.iss
 locales:
   - en
+# Installs in Program Files for all users. Explicit so the in-app update (UAC
+# prompt) relaunches the app as the current user, not as administrator
+privileges_required: admin

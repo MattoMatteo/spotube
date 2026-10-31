@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart' show ListTile;
+import 'package:flutter_hooks/flutter_hooks.dart';
 
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:shadcn_flutter/shadcn_flutter.dart' hide ButtonStyle;
@@ -11,6 +12,7 @@ import 'package:spotube/modules/settings/section_card_with_heading.dart';
 import 'package:spotube/components/adaptive/adaptive_list_tile.dart';
 import 'package:spotube/extensions/context.dart';
 import 'package:spotube/provider/user_preferences/user_preferences_provider.dart';
+import 'package:spotube/utils/service_utils.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 class SettingsAboutSection extends HookConsumerWidget {
@@ -20,6 +22,7 @@ class SettingsAboutSection extends HookConsumerWidget {
   Widget build(BuildContext context, ref) {
     final preferences = ref.watch(userPreferencesProvider);
     final preferencesNotifier = ref.watch(userPreferencesProvider.notifier);
+    final isCheckingUpdates = useState(false);
 
     return SectionCardWithHeading(
       heading: context.l10n.about,
@@ -85,6 +88,30 @@ class SettingsAboutSection extends HookConsumerWidget {
                   preferencesNotifier.setCheckUpdate(checked),
             ),
           ),
+        ListTile(
+          leading: const Icon(SpotubeIcons.refresh),
+          title: Text(context.l10n.check_for_updates_now),
+          trailing: isCheckingUpdates.value
+              ? const SizedBox.square(
+                  dimension: 20,
+                  child: CircularProgressIndicator(),
+                )
+              : null,
+          onTap: isCheckingUpdates.value
+              ? null
+              : () async {
+                  isCheckingUpdates.value = true;
+                  try {
+                    await ServiceUtils.checkForUpdates(
+                      context,
+                      ref,
+                      manual: true,
+                    );
+                  } finally {
+                    if (context.mounted) isCheckingUpdates.value = false;
+                  }
+                },
+        ),
         ListTile(
           leading: const Icon(SpotubeIcons.info),
           title: Text(context.l10n.about_spotube),

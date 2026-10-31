@@ -8,9 +8,11 @@ import 'package:html/dom.dart' hide Text;
 import 'package:shadcn_flutter/shadcn_flutter.dart' hide Element;
 import 'package:spotube/models/metadata/metadata.dart';
 import 'package:spotube/pages/library/user_local_tracks/user_local_tracks.dart';
+import 'package:spotube/extensions/context.dart';
 import 'package:spotube/modules/root/update_dialog.dart';
 
 import 'package:spotube/provider/database/database.dart';
+import 'package:spotube/services/app_updater/app_updater.dart';
 import 'package:spotube/services/dio/dio.dart';
 import 'package:spotube/services/logger/logger.dart';
 
@@ -21,10 +23,7 @@ import 'package:html/parser.dart' as parser;
 import 'dart:async';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:package_info_plus/package_info_plus.dart';
 import 'package:spotube/collections/env.dart';
-
-import 'package:version/version.dart';
 
 enum UserAgentDevice {
   desktop,
@@ -226,76 +225,58 @@ abstract class ServiceUtils {
       });
   }
 
+  /// Offers the latest release when it's newer than the running app. At
+  /// startup it honours the build flag and the "Check for updates" setting;
+  /// [manual] (the button in the settings) skips them and also reports that
+  /// the app is up to date, or why the check failed
   static Future<void> checkForUpdates(
     BuildContext context,
-    WidgetRef ref,
-  ) async {
-    if (!Env.enableUpdateChecker) return;
-    final database = ref.read(databaseProvider);
-    final checkUpdate = await (database.selectOnly(database.preferencesTable)
-          ..addColumns([database.preferencesTable.checkUpdate])
-          ..where(database.preferencesTable.id.equals(0)))
-        .map((row) => row.read(database.preferencesTable.checkUpdate))
-        .getSingleOrNull();
-
-    if (checkUpdate == false) return;
-    final packageInfo = await PackageInfo.fromPlatform();
-
-    if (Env.releaseChannel == ReleaseChannel.nightly) {
-      final value = await globalDio.getUri(
-        Uri.parse(
-          "https://api.github.com/repos/KRTirtho/spotube/actions/workflows/spotube-release-binary.yml/runs?status=success&per_page=1",
-        ),
-        options: Options(
-          responseType: ResponseType.json,
-        ),
-      );
-
-      final buildNum = value.data["workflow_runs"][0]["run_number"] as int;
-
-      if (buildNum <= int.parse(packageInfo.buildNumber) || !context.mounted) {
-        return;
-      }
-
-      await showDialog(
-        context: context,
-        barrierDismissible: true,
-        barrierColor: Colors.black.withAlpha(66),
-        builder: (context) {
-          return RootAppUpdateDialog.nightly(nightlyBuildNum: buildNum);
-        },
-      );
-    } else {
-      final value = await globalDio.getUri(
-        Uri.parse(
-          "https://api.github.com/repos/KRTirtho/spotube/releases/latest",
-        ),
-      );
-      final tagName = (value.data["tag_name"] as String).replaceAll("v", "");
-      final currentVersion = packageInfo.version == "Unknown"
-          ? null
-          : Version.parse(packageInfo.version);
-      final latestVersion =
-          tagName == "nightly" ? null : Version.parse(tagName);
-
-      if (currentVersion == null ||
-          latestVersion == null ||
-          (latestVersion.isPreRelease && !currentVersion.isPreRelease) ||
-          (!latestVersion.isPreRelease && currentVersion.isPreRelease)) {
-        return;
-      }
-
-      if (latestVersion <= currentVersion || !context.mounted) return;
-
-      showDialog(
-        context: context,
-        barrierDismissible: true,
-        barrierColor: Colors.black.withAlpha(66),
-        builder: (context) {
-          return RootAppUpdateDialog(version: latestVersion);
-        },
-      );
+    WidgetRef ref, {
+    bool manual = false,
+  }) async {
+    if (!manual) {
+      if (!Env.enableUpdateChecker) return;
+      final database = ref.read(databaseProvider);
+      final checkUpdate = await (database.selectOnly(database.preferencesTable)
+            ..addColumns([database.preferencesTable.checkUpdate])
+            ..where(database.preferencesTable.id.equals(0)))
+          .map((row) => row.read(database.preferencesTable.checkUpdate))
+          .getSingleOrNull();
+      if (checkUpdate == false) return;
     }
+
+    final AppUpdate? update;
+    try {
+      update = await AppUpdater.fetchNewer();
+    } catch (e, stack) {
+      AppLogger.reportError(e, stack);
+      if (manual && context.mounted) {
+        _showUpdateToast(context, context.l10n.update_check_failed);
+      }
+      return;
+    }
+
+    if (!context.mounted) return;
+    if (update == null) {
+      if (manual) _showUpdateToast(context, context.l10n.app_up_to_date);
+      return;
+    }
+
+    await showDialog(
+      context: context,
+      barrierDismissible: true,
+      barrierColor: Colors.black.withAlpha(66),
+      builder: (context) => RootAppUpdateDialog(update: update!),
+    );
+  }
+
+  static void _showUpdateToast(BuildContext context, String message) {
+    showToast(
+      context: context,
+      builder: (context, overlay) => SurfaceCard(
+        child: Basic(title: Text(message)),
+      ),
+    );
   }
 
   static Future<Uint8List?> downloadImage(

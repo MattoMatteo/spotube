@@ -3002,6 +3002,66 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'This build has no Last.fm API key: create your own (free) and enter it below:'**
   String get lastfm_api_key_required_info;
+
+  /// No description provided for @check_for_updates_now.
+  ///
+  /// In en, this message translates to:
+  /// **'Check for updates now'**
+  String get check_for_updates_now;
+
+  /// No description provided for @app_up_to_date.
+  ///
+  /// In en, this message translates to:
+  /// **'Matubefy is up to date'**
+  String get app_up_to_date;
+
+  /// No description provided for @update_check_failed.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t check for updates'**
+  String get update_check_failed;
+
+  /// No description provided for @matubefy_update_available.
+  ///
+  /// In en, this message translates to:
+  /// **'Matubefy {version} is available'**
+  String matubefy_update_available(Object version);
+
+  /// No description provided for @later.
+  ///
+  /// In en, this message translates to:
+  /// **'Later'**
+  String get later;
+
+  /// No description provided for @open_release_page.
+  ///
+  /// In en, this message translates to:
+  /// **'Open the release page'**
+  String get open_release_page;
+
+  /// No description provided for @downloading_update.
+  ///
+  /// In en, this message translates to:
+  /// **'Downloading the update… {percent}%'**
+  String downloading_update(Object percent);
+
+  /// No description provided for @update_closes_app.
+  ///
+  /// In en, this message translates to:
+  /// **'Matubefy closes while the update is installed and opens again afterwards.'**
+  String get update_closes_app;
+
+  /// No description provided for @install_permission_needed.
+  ///
+  /// In en, this message translates to:
+  /// **'Allow Matubefy to install apps, then try again'**
+  String get install_permission_needed;
+
+  /// No description provided for @update_failed.
+  ///
+  /// In en, this message translates to:
+  /// **'The update failed'**
+  String get update_failed;
 }
 
 class _AppLocalizationsDelegate

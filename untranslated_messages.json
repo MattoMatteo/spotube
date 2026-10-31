@@ -3,195 +3,475 @@
     "lastfm_api_key",
     "lastfm_api_secret",
     "lastfm_api_key_optional_info",
-    "lastfm_api_key_required_info"
+    "lastfm_api_key_required_info",
+    "check_for_updates_now",
+    "app_up_to_date",
+    "update_check_failed",
+    "matubefy_update_available",
+    "later",
+    "open_release_page",
+    "downloading_update",
+    "update_closes_app",
+    "install_permission_needed",
+    "update_failed"
   ],
 
   "bn": [
     "lastfm_api_key",
     "lastfm_api_secret",
     "lastfm_api_key_optional_info",
-    "lastfm_api_key_required_info"
+    "lastfm_api_key_required_info",
+    "check_for_updates_now",
+    "app_up_to_date",
+    "update_check_failed",
+    "matubefy_update_available",
+    "later",
+    "open_release_page",
+    "downloading_update",
+    "update_closes_app",
+    "install_permission_needed",
+    "update_failed"
   ],
 
   "ca": [
     "lastfm_api_key",
     "lastfm_api_secret",
     "lastfm_api_key_optional_info",
-    "lastfm_api_key_required_info"
+    "lastfm_api_key_required_info",
+    "check_for_updates_now",
+    "app_up_to_date",
+    "update_check_failed",
+    "matubefy_update_available",
+    "later",
+    "open_release_page",
+    "downloading_update",
+    "update_closes_app",
+    "install_permission_needed",
+    "update_failed"
   ],
 
   "cs": [
     "lastfm_api_key",
     "lastfm_api_secret",
     "lastfm_api_key_optional_info",
-    "lastfm_api_key_required_info"
+    "lastfm_api_key_required_info",
+    "check_for_updates_now",
+    "app_up_to_date",
+    "update_check_failed",
+    "matubefy_update_available",
+    "later",
+    "open_release_page",
+    "downloading_update",
+    "update_closes_app",
+    "install_permission_needed",
+    "update_failed"
   ],
 
   "de": [
     "lastfm_api_key",
     "lastfm_api_secret",
     "lastfm_api_key_optional_info",
-    "lastfm_api_key_required_info"
+    "lastfm_api_key_required_info",
+    "check_for_updates_now",
+    "app_up_to_date",
+    "update_check_failed",
+    "matubefy_update_available",
+    "later",
+    "open_release_page",
+    "downloading_update",
+    "update_closes_app",
+    "install_permission_needed",
+    "update_failed"
   ],
 
   "es": [
     "lastfm_api_key",
     "lastfm_api_secret",
     "lastfm_api_key_optional_info",
-    "lastfm_api_key_required_info"
+    "lastfm_api_key_required_info",
+    "check_for_updates_now",
+    "app_up_to_date",
+    "update_check_failed",
+    "matubefy_update_available",
+    "later",
+    "open_release_page",
+    "downloading_update",
+    "update_closes_app",
+    "install_permission_needed",
+    "update_failed"
   ],
 
   "eu": [
     "lastfm_api_key",
     "lastfm_api_secret",
     "lastfm_api_key_optional_info",
-    "lastfm_api_key_required_info"
+    "lastfm_api_key_required_info",
+    "check_for_updates_now",
+    "app_up_to_date",
+    "update_check_failed",
+    "matubefy_update_available",
+    "later",
+    "open_release_page",
+    "downloading_update",
+    "update_closes_app",
+    "install_permission_needed",
+    "update_failed"
   ],
 
   "fa": [
     "lastfm_api_key",
     "lastfm_api_secret",
     "lastfm_api_key_optional_info",
-    "lastfm_api_key_required_info"
+    "lastfm_api_key_required_info",
+    "check_for_updates_now",
+    "app_up_to_date",
+    "update_check_failed",
+    "matubefy_update_available",
+    "later",
+    "open_release_page",
+    "downloading_update",
+    "update_closes_app",
+    "install_permission_needed",
+    "update_failed"
   ],
 
   "fi": [
     "lastfm_api_key",
     "lastfm_api_secret",
     "lastfm_api_key_optional_info",
-    "lastfm_api_key_required_info"
+    "lastfm_api_key_required_info",
+    "check_for_updates_now",
+    "app_up_to_date",
+    "update_check_failed",
+    "matubefy_update_available",
+    "later",
+    "open_release_page",
+    "downloading_update",
+    "update_closes_app",
+    "install_permission_needed",
+    "update_failed"
   ],
 
   "fr": [
     "lastfm_api_key",
     "lastfm_api_secret",
     "lastfm_api_key_optional_info",
-    "lastfm_api_key_required_info"
+    "lastfm_api_key_required_info",
+    "check_for_updates_now",
+    "app_up_to_date",
+    "update_check_failed",
+    "matubefy_update_available",
+    "later",
+    "open_release_page",
+    "downloading_update",
+    "update_closes_app",
+    "install_permission_needed",
+    "update_failed"
   ],
 
   "hi": [
     "lastfm_api_key",
     "lastfm_api_secret",
     "lastfm_api_key_optional_info",
-    "lastfm_api_key_required_info"
+    "lastfm_api_key_required_info",
+    "check_for_updates_now",
+    "app_up_to_date",
+    "update_check_failed",
+    "matubefy_update_available",
+    "later",
+    "open_release_page",
+    "downloading_update",
+    "update_closes_app",
+    "install_permission_needed",
+    "update_failed"
   ],
 
   "id": [
     "lastfm_api_key",
     "lastfm_api_secret",
     "lastfm_api_key_optional_info",
-    "lastfm_api_key_required_info"
+    "lastfm_api_key_required_info",
+    "check_for_updates_now",
+    "app_up_to_date",
+    "update_check_failed",
+    "matubefy_update_available",
+    "later",
+    "open_release_page",
+    "downloading_update",
+    "update_closes_app",
+    "install_permission_needed",
+    "update_failed"
   ],
 
   "ja": [
     "lastfm_api_key",
     "lastfm_api_secret",
     "lastfm_api_key_optional_info",
-    "lastfm_api_key_required_info"
+    "lastfm_api_key_required_info",
+    "check_for_updates_now",
+    "app_up_to_date",
+    "update_check_failed",
+    "matubefy_update_available",
+    "later",
+    "open_release_page",
+    "downloading_update",
+    "update_closes_app",
+    "install_permission_needed",
+    "update_failed"
   ],
 
   "ka": [
     "lastfm_api_key",
     "lastfm_api_secret",
     "lastfm_api_key_optional_info",
-    "lastfm_api_key_required_info"
+    "lastfm_api_key_required_info",
+    "check_for_updates_now",
+    "app_up_to_date",
+    "update_check_failed",
+    "matubefy_update_available",
+    "later",
+    "open_release_page",
+    "downloading_update",
+    "update_closes_app",
+    "install_permission_needed",
+    "update_failed"
   ],
 
   "ko": [
     "lastfm_api_key",
     "lastfm_api_secret",
     "lastfm_api_key_optional_info",
-    "lastfm_api_key_required_info"
+    "lastfm_api_key_required_info",
+    "check_for_updates_now",
+    "app_up_to_date",
+    "update_check_failed",
+    "matubefy_update_available",
+    "later",
+    "open_release_page",
+    "downloading_update",
+    "update_closes_app",
+    "install_permission_needed",
+    "update_failed"
   ],
 
   "ne": [
     "lastfm_api_key",
     "lastfm_api_secret",
     "lastfm_api_key_optional_info",
-    "lastfm_api_key_required_info"
+    "lastfm_api_key_required_info",
+    "check_for_updates_now",
+    "app_up_to_date",
+    "update_check_failed",
+    "matubefy_update_available",
+    "later",
+    "open_release_page",
+    "downloading_update",
+    "update_closes_app",
+    "install_permission_needed",
+    "update_failed"
   ],
 
   "nl": [
     "lastfm_api_key",
     "lastfm_api_secret",
     "lastfm_api_key_optional_info",
-    "lastfm_api_key_required_info"
+    "lastfm_api_key_required_info",
+    "check_for_updates_now",
+    "app_up_to_date",
+    "update_check_failed",
+    "matubefy_update_available",
+    "later",
+    "open_release_page",
+    "downloading_update",
+    "update_closes_app",
+    "install_permission_needed",
+    "update_failed"
   ],
 
   "pl": [
     "lastfm_api_key",
     "lastfm_api_secret",
     "lastfm_api_key_optional_info",
-    "lastfm_api_key_required_info"
+    "lastfm_api_key_required_info",
+    "check_for_updates_now",
+    "app_up_to_date",
+    "update_check_failed",
+    "matubefy_update_available",
+    "later",
+    "open_release_page",
+    "downloading_update",
+    "update_closes_app",
+    "install_permission_needed",
+    "update_failed"
   ],
 
   "pt": [
     "lastfm_api_key",
     "lastfm_api_secret",
     "lastfm_api_key_optional_info",
-    "lastfm_api_key_required_info"
+    "lastfm_api_key_required_info",
+    "check_for_updates_now",
+    "app_up_to_date",
+    "update_check_failed",
+    "matubefy_update_available",
+    "later",
+    "open_release_page",
+    "downloading_update",
+    "update_closes_app",
+    "install_permission_needed",
+    "update_failed"
   ],
 
   "ru": [
     "lastfm_api_key",
     "lastfm_api_secret",
     "lastfm_api_key_optional_info",
-    "lastfm_api_key_required_info"
+    "lastfm_api_key_required_info",
+    "check_for_updates_now",
+    "app_up_to_date",
+    "update_check_failed",
+    "matubefy_update_available",
+    "later",
+    "open_release_page",
+    "downloading_update",
+    "update_closes_app",
+    "install_permission_needed",
+    "update_failed"
   ],
 
   "ta": [
     "lastfm_api_key",
     "lastfm_api_secret",
     "lastfm_api_key_optional_info",
-    "lastfm_api_key_required_info"
+    "lastfm_api_key_required_info",
+    "check_for_updates_now",
+    "app_up_to_date",
+    "update_check_failed",
+    "matubefy_update_available",
+    "later",
+    "open_release_page",
+    "downloading_update",
+    "update_closes_app",
+    "install_permission_needed",
+    "update_failed"
   ],
 
   "th": [
     "lastfm_api_key",
     "lastfm_api_secret",
     "lastfm_api_key_optional_info",
-    "lastfm_api_key_required_info"
+    "lastfm_api_key_required_info",
+    "check_for_updates_now",
+    "app_up_to_date",
+    "update_check_failed",
+    "matubefy_update_available",
+    "later",
+    "open_release_page",
+    "downloading_update",
+    "update_closes_app",
+    "install_permission_needed",
+    "update_failed"
   ],
 
   "tl": [
     "lastfm_api_key",
     "lastfm_api_secret",
     "lastfm_api_key_optional_info",
-    "lastfm_api_key_required_info"
+    "lastfm_api_key_required_info",
+    "check_for_updates_now",
+    "app_up_to_date",
+    "update_check_failed",
+    "matubefy_update_available",
+    "later",
+    "open_release_page",
+    "downloading_update",
+    "update_closes_app",
+    "install_permission_needed",
+    "update_failed"
   ],
 
   "tr": [
     "lastfm_api_key",
     "lastfm_api_secret",
     "lastfm_api_key_optional_info",
-    "lastfm_api_key_required_info"
+    "lastfm_api_key_required_info",
+    "check_for_updates_now",
+    "app_up_to_date",
+    "update_check_failed",
+    "matubefy_update_available",
+    "later",
+    "open_release_page",
+    "downloading_update",
+    "update_closes_app",
+    "install_permission_needed",
+    "update_failed"
   ],
 
   "uk": [
     "lastfm_api_key",
     "lastfm_api_secret",
     "lastfm_api_key_optional_info",
-    "lastfm_api_key_required_info"
+    "lastfm_api_key_required_info",
+    "check_for_updates_now",
+    "app_up_to_date",
+    "update_check_failed",
+    "matubefy_update_available",
+    "later",
+    "open_release_page",
+    "downloading_update",
+    "update_closes_app",
+    "install_permission_needed",
+    "update_failed"
   ],
 
   "vi": [
     "lastfm_api_key",
     "lastfm_api_secret",
     "lastfm_api_key_optional_info",
-    "lastfm_api_key_required_info"
+    "lastfm_api_key_required_info",
+    "check_for_updates_now",
+    "app_up_to_date",
+    "update_check_failed",
+    "matubefy_update_available",
+    "later",
+    "open_release_page",
+    "downloading_update",
+    "update_closes_app",
+    "install_permission_needed",
+    "update_failed"
   ],
 
   "zh": [
     "lastfm_api_key",
     "lastfm_api_secret",
     "lastfm_api_key_optional_info",
-    "lastfm_api_key_required_info"
+    "lastfm_api_key_required_info",
+    "check_for_updates_now",
+    "app_up_to_date",
+    "update_check_failed",
+    "matubefy_update_available",
+    "later",
+    "open_release_page",
+    "downloading_update",
+    "update_closes_app",
+    "install_permission_needed",
+    "update_failed"
   ],
 
   "zh_TW": [
     "lastfm_api_key",
     "lastfm_api_secret",
     "lastfm_api_key_optional_info",
-    "lastfm_api_key_required_info"
+    "lastfm_api_key_required_info",
+    "check_for_updates_now",
+    "app_up_to_date",
+    "update_check_failed",
+    "matubefy_update_available",
+    "later",
+    "open_release_page",
+    "downloading_update",
+    "update_closes_app",
+    "install_permission_needed",
+    "update_failed"
   ]
 }

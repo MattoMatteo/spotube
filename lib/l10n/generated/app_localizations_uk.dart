@@ -1581,4 +1581,40 @@ class AppLocalizationsUk extends AppLocalizations {
   @override
   String get lastfm_api_key_required_info =>
       'This build has no Last.fm API key: create your own (free) and enter it below:';
+
+  @override
+  String get check_for_updates_now => 'Check for updates now';
+
+  @override
+  String get app_up_to_date => 'Matubefy is up to date';
+
+  @override
+  String get update_check_failed => 'Couldn\'t check for updates';
+
+  @override
+  String matubefy_update_available(Object version) {
+    return 'Matubefy $version is available';
+  }
+
+  @override
+  String get later => 'Later';
+
+  @override
+  String get open_release_page => 'Open the release page';
+
+  @override
+  String downloading_update(Object percent) {
+    return 'Downloading the update… $percent%';
+  }
+
+  @override
+  String get update_closes_app =>
+      'Matubefy closes while the update is installed and opens again afterwards.';
+
+  @override
+  String get install_permission_needed =>
+      'Allow Matubefy to install apps, then try again';
+
+  @override
+  String get update_failed => 'The update failed';
 }
